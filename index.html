@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>英格麗魔法天地</title>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&family=Noto+Serif+TC:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -13,21 +13,24 @@
       background-position: center;
       background-attachment: fixed;
       color: #fff;
-      font-family: 'Zen Kurenaido', cursive;
+      font-family: 'Noto Serif TC', serif;
       padding: 20px;
     }
+
     h1 {
       text-align: center;
-      font-size: 2.5em;
+      font-size: 3em;
       animation: pulse 2s infinite;
       color: #ffe6ff;
       text-shadow: 0 0 20px #ffb7ff;
     }
+
     @keyframes pulse {
       0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+      50% { transform: scale(1.1); }
       100% { transform: scale(1); }
     }
+
     .quote-box {
       background: rgba(255, 255, 255, 0.1);
       border: 2px solid #fff;
@@ -36,26 +39,28 @@
       font-size: 1.2em;
       text-shadow: 0 0 5px #fff;
       padding: 20px;
-      max-width: 700px;
+      max-width: 90%;
       margin: 20px auto;
       text-align: center;
     }
+
     .carousel {
       display: flex;
       overflow-x: auto;
-      gap: 8px;
+      gap: 10px;
       padding: 20px 0;
       scroll-behavior: smooth;
-      justify-content: center;
-      flex-wrap: nowrap;
     }
+
     .carousel::-webkit-scrollbar {
       height: 6px;
     }
+
     .carousel::-webkit-scrollbar-thumb {
       background: #ccc;
       border-radius: 4px;
     }
+
     .image-box {
       flex: 0 0 auto;
       border: 2px solid #fff;
@@ -63,29 +68,58 @@
       box-shadow: 0 0 10px rgba(255, 128, 255, 0.8);
       transition: transform 0.3s ease, filter 0.3s ease;
     }
+
     .image-box:hover {
       transform: scale(1.05);
       filter: brightness(1.3);
     }
+
     .image-box img {
-      width: 90px;
+      width: 80px;
       height: auto;
       border-radius: 8px;
       display: block;
+      cursor: pointer;
     }
-    @media screen and (max-width: 600px) {
-      .image-box img {
-        width: 80px;
-      }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
     }
+
+    .modal-content {
+      margin: 10% auto;
+      display: block;
+      max-width: 90%;
+      border: 5px solid #fff;
+      box-shadow: 0 0 25px #fff;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: #fff;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
     .links {
       margin-top: 30px;
       text-align: center;
       font-size: 1.2em;
     }
+
     .links a {
       display: inline-block;
-      margin: 6px;
+      margin: 8px;
       padding: 8px 16px;
       border-radius: 6px;
       background: #ffccff;
@@ -94,14 +128,9 @@
       box-shadow: 0 0 10px #fff, 0 0 15px #f0f;
       transition: background 0.3s ease;
     }
+
     .links a:hover {
       background: #ffe6ff;
-    }
-    iframe {
-      width: 90%;
-      height: 400px;
-      border: none;
-      margin-top: 20px;
     }
   </style>
 </head>
@@ -111,28 +140,32 @@
   <div class="quote-box" id="quoteBox">載入魔法語錄中...</div>
 
   <div class="carousel">
-    <div class="image-box"><img src="S__36348141_0.jpg" alt="圖片1"></div>
-    <div class="image-box"><img src="S__36348142_0.jpg" alt="圖片2"></div>
-    <div class="image-box"><img src="S__36348143_0.jpg" alt="圖片3"></div>
-    <div class="image-box"><img src="S__36348144_0.jpg" alt="圖片4"></div>
-    <div class="image-box"><img src="S__36348145_0.jpg" alt="圖片5"></div>
-    <div class="image-box"><img src="S__36348146_0.jpg" alt="圖片6"></div>
-    <div class="image-box"><img src="S__36348147_0.jpg" alt="圖片7"></div>
-    <div class="image-box"><img src="S__36348148_0.jpg" alt="圖片8"></div>
-    <div class="image-box"><img src="S__36348149_0.jpg" alt="圖片9"></div>
-    <div class="image-box"><img src="S__36348150_0.jpg" alt="圖片10"></div>
+    <div class="image-box"><img src="S__36348141_0.jpg" alt="圖片1" onclick="openModal(this.src)"></div>
+    <div class="image-box"><img src="S__36348142_0.jpg" alt="圖片2" onclick="openModal(this.src)"></div>
+    <div class="image-box"><img src="S__36348143_0.jpg" alt="圖片3" onclick="openModal(this.src)"></div>
+    <div class="image-box"><img src="S__36348144_0.jpg" alt="圖片4" onclick="openModal(this.src)"></div>
+    <div class="image-box"><img src="S__36348145_0.jpg" alt="圖片5" onclick="openModal(this.src)"></div>
+    <div class="image-box"><img src="S__36348146_0.jpg" alt="圖片6" onclick="openModal(this.src)"></div>
+    <div class="image-box"><img src="S__36348147_0.jpg" alt="圖片7" onclick="openModal(this.src)"></div>
+    <div class="image-box"><img src="S__36348148_0.jpg" alt="圖片8" onclick="openModal(this.src)"></div>
+    <div class="image-box"><img src="S__36348149_0.jpg" alt="圖片9" onclick="openModal(this.src)"></div>
+    <div class="image-box"><img src="S__36348150_0.jpg" alt="圖片10" onclick="openModal(this.src)"></div>
   </div>
 
   <div class="links">
-    <a href="#" onclick="loadPage('https://www.instagram.com/ingridmagick4283/?hl=ja')">Instagram</a>
-    <a href="#" onclick="loadPage('https://bit.ly/45mDgAs')">SoundOn</a>
-    <a href="#" onclick="loadPage('https://bit.ly/3RsPBNY')">Spotify</a>
-    <a href="#" onclick="loadPage('https://www.youtube.com/@Ingridstudio_2019')">YouTube</a>
-    <a href="#" onclick="loadPage('https://tw.shp.ee/cLbmVew')">蝦皮</a>
-    <a href="#" onclick="loadPage('https://lin.ee/VFSORxf')">LINE@</a>
+    <a href="https://www.instagram.com/ingridmagick4283/?hl=ja" target="_blank">Instagram</a>
+    <a href="https://bit.ly/45mDgAs" target="_blank">SoundOn</a>
+    <a href="https://bit.ly/3RsPBNY" target="_blank">Spotify</a>
+    <a href="https://www.youtube.com/@Ingridstudio_2019" target="_blank">YouTube</a>
+    <a href="https://tw.shp.ee/cLbmVew" target="_blank">蝦皮</a>
+    <a href="https://lin.ee/VFSORxf" target="_blank">LINE@</a>
   </div>
 
-  <iframe id="contentFrame" src=""></iframe>
+  <!-- Modal for full image preview -->
+  <div id="imageModal" class="modal" onclick="this.style.display='none'">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
 
   <script>
     const quotes = [
@@ -145,54 +178,17 @@
       "你不需要完美，才能被愛。",
       "愛自己，是靈性修行的第一步。",
       "即使身陷黑暗，你依然是光的容器。",
-      "靈魂從不急躁，它相信時機。",
-      "你是一道連接天地的橋樑。",
-      "每一次深呼吸，都是療癒的開始。",
-      "順流而行，你將遇見宇宙的祝福。",
-      "接受自己的每個樣子，你就自由了。",
-      "你走過的所有路，都是為了遇見現在的你。",
-      "你並不孤單，宇宙一直與你同在。",
-      "保持純淨，是最強的守護。",
-      "善良不是軟弱，而是深層的勇敢。",
-      "你擁有轉化一切的能量。",
-      "靜心，是與高我連結的橋樑。",
-      "萬物都有靈性，你也是。",
-      "與其尋找答案，不如成為答案。",
-      "你的直覺就是來自靈魂的低語。",
-      "感謝，是最強的能量擴大器。",
-      "你值得所有你夢想的美好。",
-      "願你的心，如月光般溫柔照亮他人。",
-      "在沉默中，你會聽見靈魂的聲音。",
-      "每次跌倒都是靈魂在長高。",
-      "讓光穿透你，你就是祝福本身。",
-      "星星會為願望努力閃爍。",
-      "把悲傷交給月亮，讓它幫你安放。",
-      "心中有光，走到哪裡都能發亮。",
-      "愛是永恆的魔法。",
-      "每個呼吸，都是新的開始。",
-      "你就是你在等的奇蹟。",
-      "記得仰望星空，靈魂會得到答案。",
-      "願你擁抱每個版本的自己。",
-      "脆弱，是心打開的時候。",
-      "你值得平靜，也值得光芒。",
-      "放下不是放棄，是為了更大的接納。",
-      "你的存在，就是世界的禮物。",
-      "相信你內在的光，它從不熄滅。",
-      "與宇宙同步時，一切自然展開。",
-      "你的一笑，是這世界的彩虹。",
-      "別急，花也要時間綻放。",
-      "你的靈魂知道方向，只要你願聽。",
-      "感受，是連接神性的管道。",
-      "活著，是最神聖的奇蹟。",
-      "只要心念轉動，現實也會跟著改變。",
-      "你早已足夠。現在就可以閃耀。"
+      "靈魂從不急躁，它相信時機。"
     ];
-    const quoteBox = document.getElementById("quoteBox");
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    quoteBox.textContent = randomQuote;
 
-    function loadPage(url) {
-      document.getElementById('contentFrame').src = url;
+    const todayIndex = new Date().getDate() % quotes.length;
+    document.getElementById("quoteBox").textContent = quotes[todayIndex];
+
+    function openModal(src) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      modal.style.display = "block";
+      modalImg.src = src;
     }
   </script>
 </body>
