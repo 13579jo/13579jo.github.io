@@ -2,79 +2,166 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>連結展示框</title>
+  <title>我的照片牆</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #1a1a1a;
+      background-color: #000;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: 'Noto Serif TC', serif;
       color: white;
-      font-family: "Zen Kurenaido", sans-serif;
-      padding: 30px;
       text-align: center;
     }
 
-    .link-section {
-      max-width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    /* 標題動畫 */
+    h1 {
+      font-size: 40px;
+      margin-top: 30px;
+      animation: pulse 2s infinite;
+      text-shadow: 2px 2px 10px #ff99ff;
     }
 
-    .link-box {
-      display: flex;
-      flex-wrap: wrap;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    /* 圖片滑動區 */
+    .scroll-container {
+      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding: 30px 0;
+    }
+
+    .slider {
+      display: inline-block;
+      animation: scroll 40s linear infinite;
+    }
+
+    .slider a {
+      display: inline-block;
+      margin: 0 8px;
+    }
+
+    .slider img {
+      height: 120px;
+      border-radius: 10px;
+      border: 3px solid transparent;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .slider img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #ffccff, 0 0 30px #ffffff;
+      border-color: #ffffff;
+      cursor: pointer;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Lightbox 樣式 */
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
       justify-content: center;
-      gap: 10px;
-      margin-bottom: 20px;
+      align-items: center;
+      z-index: 999;
     }
 
-    .link-box a {
-      padding: 10px 16px;
-      background: #ffccff;
-      border-radius: 8px;
-      color: #000;
-      text-decoration: none;
-      box-shadow: 0 0 10px #fff, 0 0 20px #f0f;
-      font-size: 1.1em;
-      transition: background 0.3s;
-    }
-
-    .link-box a:hover {
-      background: #ffe6ff;
-    }
-
-    .preview-frame {
-      width: 95%;
-      height: 400px;
-      border: 2px solid #fff;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255, 200, 255, 0.8);
-      background-color: #fff;
-    }
-
-    @media screen and (max-width: 600px) {
-      .preview-frame {
-        height: 300px;
-      }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 30px #fff;
     }
   </style>
 </head>
 <body>
 
-  <h1>魔法連結展示</h1>
+  <h1>🌟 我的照片魔法牆 🌟</h1>
 
-  <div class="link-section">
-    <div class="link-box">
-      <a href="https://www.instagram.com/ingridmagick4283/?hl=ja" target="linkFrame">Instagram</a>
-      <a href="https://bit.ly/45mDgAs" target="linkFrame">SoundOn</a>
-      <a href="https://bit.ly/3RsPBNY" target="linkFrame">Spotify</a>
-      <a href="https://www.youtube.com/@Ingridstudio_2019" target="linkFrame">YouTube</a>
-      <a href="https://tw.shp.ee/cLbmVew" target="linkFrame">蝦皮</a>
-      <a href="https://lin.ee/VFSORxf" target="linkFrame">LINE@</a>
+  <div class="scroll-container">
+    <div class="slider">
+      <!-- 請確保下列圖檔都有上傳在 GitHub 上 -->
+      <!-- 點擊圖片會開啟放大 -->
+      <!-- 你可以加入更多圖片，格式都一樣 -->
+      <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg"></a>
+      <a href="S__36348139_0.jpg"><img src="S__36348139_0.jpg"></a>
+      <a href="S__36348140_0.jpg"><img src="S__36348140_0.jpg"></a>
+      <a href="S__36348141_0.jpg"><img src="S__36348141_0.jpg"></a>
+      <a href="S__36348142_0.jpg"><img src="S__36348142_0.jpg"></a>
+      <a href="S__36348143_0.jpg"><img src="S__36348143_0.jpg"></a>
+      <a href="S__36348144_0.jpg"><img src="S__36348144_0.jpg"></a>
+      <a href="S__36348145_0.jpg"><img src="S__36348145_0.jpg"></a>
+      <a href="S__36348146_0.jpg"><img src="S__36348146_0.jpg"></a>
+      <a href="S__36348147_0.jpg"><img src="S__36348147_0.jpg"></a>
+      <a href="S__36348149_0.jpg"><img src="S__36348149_0.jpg"></a>
+      <a href="S__36348150_0.jpg"><img src="S__36348150_0.jpg"></a>
+      <a href="S__36348151_0.jpg"><img src="S__36348151_0.jpg"></a>
+      <a href="S__36348152_0.jpg"><img src="S__36348152_0.jpg"></a>
+      <a href="S__36348153_0.jpg"><img src="S__36348153_0.jpg"></a>
+      <a href="S__36348174_0.jpg"><img src="S__36348174_0.jpg"></a>
+      <a href="S__36348175_0.jpg"><img src="S__36348175_0.jpg"></a>
+      <a href="S__36348176_0.jpg"><img src="S__36348176_0.jpg"></a>
+      <a href="S__36348177_0.jpg"><img src="S__36348177_0.jpg"></a>
+      <a href="S__36348178_0.jpg"><img src="S__36348178_0.jpg"></a>
+      <a href="S__36348179_0.jpg"><img src="S__36348179_0.jpg"></a>
+      <a href="S__36348180_0.jpg"><img src="S__36348180_0.jpg"></a>
+      <a href="S__36348181_0.jpg"><img src="S__36348181_0.jpg"></a>
+      <a href="S__36348182_0.jpg"><img src="S__36348182_0.jpg"></a>
+      <a href="S__36348183_0.jpg"><img src="S__36348183_0.jpg"></a>
+      <a href="S__36348185_0.jpg"><img src="S__36348185_0.jpg"></a>
+      <a href="S__36348186_0.jpg"><img src="S__36348186_0.jpg"></a>
+      <a href="S__36348223_0.jpg"><img src="S__36348223_0.jpg"></a>
+      <a href="S__36348224_0.jpg"><img src="S__36348224_0.jpg"></a>
+      <a href="S__36348225_0.jpg"><img src="S__36348225_0.jpg"></a>
+      <a href="S__36348226_0.jpg"><img src="S__36348226_0.jpg"></a>
+      <a href="S__36348227_0.jpg"><img src="S__36348227_0.jpg"></a>
+      <a href="S__36348228_0.jpg"><img src="S__36348228_0.jpg"></a>
+      <a href="S__36348229_0.jpg"><img src="S__36348229_0.jpg"></a>
+      <a href="S__36348230_0.jpg"><img src="S__36348230_0.jpg"></a>
+      <a href="S__36348231_0.jpg"><img src="S__36348231_0.jpg"></a>
+      <a href="S__36348232_0.jpg"><img src="S__36348232_0.jpg"></a>
+      <a href="S__36348234_0.jpg"><img src="S__36348234_0.jpg"></a>
+      <a href="S__36348235_0.jpg"><img src="S__36348235_0.jpg"></a>
+      <a href="S__36348236_0.jpg"><img src="S__36348236_0.jpg"></a>
+      <a href="S__36348237_0.jpg"><img src="S__36348237_0.jpg"></a>
+      <a href="S__36348238_0.jpg"><img src="S__36348238_0.jpg"></a>
     </div>
-
-    <iframe class="preview-frame" name="linkFrame"></iframe>
   </div>
+
+  <!-- Lightbox 預覽 -->
+  <div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="">
+  </div>
+
+  <script>
+    // 點圖片開啟 lightbox 預覽
+    const links = document.querySelectorAll('.slider a');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    links.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        lightboxImg.src = this.href;
+        lightbox.style.display = 'flex';
+      });
+    });
+  </script>
 
 </body>
 </html>
