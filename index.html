@@ -1,94 +1,153 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>英格莉的魔法小天地</title>
+  <title>英格莉的魔法天地</title>
   <style>
     body {
-      margin: 0;
-      font-family: "Courier New", monospace;
-      font-size: 20px;
-      color: #fff;
       background-image: url('958628.jpg');
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
+      color: white;
+      font-family: "Noto Sans TC", sans-serif;
+      text-shadow: 1px 1px 3px black;
+      padding: 30px;
     }
 
     h1 {
+      font-size: 2.5em;
       text-align: center;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      font-size: 32px;
+      margin-bottom: 10px;
     }
 
-    .section {
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.5);
-      margin: 20px;
-      border-radius: 10px;
+    p {
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: 30px;
     }
 
-    .scroll-container {
-      display: flex;
+    .image-scroll {
       overflow: hidden;
       white-space: nowrap;
-      animation: scroll-left 20s linear infinite;
-      padding: 10px 0;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 30px 0;
     }
 
-    .scroll-container img {
-      height: 150px;
+    .scroll-track {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scroll-left 50s linear infinite;
+    }
+
+    .scroll-track img {
+      height: 180px;
       margin-right: 20px;
       border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.4);
     }
 
     @keyframes scroll-left {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
+      0%   { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
     }
 
     .links {
-      text-align: left;
-      margin-top: 20px;
+      text-align: center;
+      margin-top: 40px;
     }
 
     .links a {
       display: block;
-      color: #ffffcc;
+      font-size: 1.2em;
+      color: #ffd700;
       text-decoration: none;
-      margin: 5px 0;
-      font-weight: bold;
+      margin: 10px 0;
     }
 
     .links a:hover {
-      text-decoration: underline;
+      color: #ffccff;
     }
   </style>
 </head>
 <body>
 
-  <h1>🌟 歡迎來到英格莉的魔法小天地 🌟</h1>
+  <h1>歡迎來到英格莉的魔法天地 ✨</h1>
+  <p>這是我放進來的圖片展示：</p>
 
-  <div class="section">
-    <p>這是我放進來的圖片展示（從右往左滾動）：</p>
-    <div class="scroll-container">
-      <img src="S__36348138_0.jpg" alt="圖片1">
-      <img src="S__36348139_0.jpg" alt="圖片2">
-      <img src="S__36348140_0.jpg" alt="圖片3">
-      <img src="S__36348141_0.jpg" alt="圖片4">
-      <img src="S__36348142_0.jpg" alt="圖片5">
-      <img src="S__36348143_0.jpg" alt="圖片6">
+  <div class="image-scroll">
+    <div class="scroll-track">
+      <!-- 圖片列表 -->
+      <img src="S__36348138_0.jpg">
+      <img src="S__36348139_0.jpg">
+      <img src="S__36348140_0.jpg">
+      <img src="S__36348141_0.jpg">
+      <img src="S__36348142_0.jpg">
+      <img src="S__36348143_0.jpg">
+      <img src="S__36348144_0.jpg">
+      <img src="S__36348145_0.jpg">
+      <img src="S__36348146_0.jpg">
+      <img src="S__36348147_0.jpg">
+      <img src="S__36348149_0.jpg">
+      <img src="S__36348150_0.jpg">
+      <img src="S__36348151_0.jpg">
+      <img src="S__36348152_0.jpg">
+      <img src="S__36348223_0.jpg">
+      <img src="S__36348224_0.jpg">
+      <img src="S__36348225_0.jpg">
+      <img src="S__36348226_0.jpg">
+      <img src="S__36348227_0.jpg">
+      <img src="S__36348228_0.jpg">
+      <img src="S__36348229_0.jpg">
+      <img src="S__36348230_0.jpg">
+      <img src="S__36348231_0.jpg">
+      <img src="S__36348232_0.jpg">
+      <img src="S__36348234_0.jpg">
+      <img src="S__36348235_0.jpg">
+      <img src="S__36348236_0.jpg">
+      <img src="S__36348237_0.jpg">
+      <img src="S__36348238_0.jpg">
+
+      <!-- 複製一組做無縫輪播 -->
+      <img src="S__36348138_0.jpg">
+      <img src="S__36348139_0.jpg">
+      <img src="S__36348140_0.jpg">
+      <img src="S__36348141_0.jpg">
+      <img src="S__36348142_0.jpg">
+      <img src="S__36348143_0.jpg">
+      <img src="S__36348144_0.jpg">
+      <img src="S__36348145_0.jpg">
+      <img src="S__36348146_0.jpg">
+      <img src="S__36348147_0.jpg">
+      <img src="S__36348149_0.jpg">
+      <img src="S__36348150_0.jpg">
+      <img src="S__36348151_0.jpg">
+      <img src="S__36348152_0.jpg">
+      <img src="S__36348223_0.jpg">
+      <img src="S__36348224_0.jpg">
+      <img src="S__36348225_0.jpg">
+      <img src="S__36348226_0.jpg">
+      <img src="S__36348227_0.jpg">
+      <img src="S__36348228_0.jpg">
+      <img src="S__36348229_0.jpg">
+      <img src="S__36348230_0.jpg">
+      <img src="S__36348231_0.jpg">
+      <img src="S__36348232_0.jpg">
+      <img src="S__36348234_0.jpg">
+      <img src="S__36348235_0.jpg">
+      <img src="S__36348236_0.jpg">
+      <img src="S__36348237_0.jpg">
+      <img src="S__36348238_0.jpg">
     </div>
   </div>
 
-  <div class="section links">
+  <div class="links">
     <p>✨ 點下面這些連結探索更多魔法 ✨</p>
-    <a href="https://www.instagram.com/ingridmagick4283/?hl=ja">Instagram</a>
-    <a href="https://bit.ly/45mDgAs">Podcast</a>
-    <a href="https://tw.shp.ee/cLbmVew">蝦皮商店</a>
-    <a href="https://lin.ee/VFSORxf">LINE 塔羅預約</a>
-    <a href="https://13579jo.github.io/tarot-website1/">神秘塔羅占卜網站</a>
+    <a href="https://www.instagram.com/ingridmagick4283/?hl=ja" target="_blank">Instagram</a>
+    <a href="https://bit.ly/45mDgAs" target="_blank">Podcast</a>
+    <a href="https://tw.shp.ee/cLbmVew" target="_blank">蝦皮商店</a>
+    <a href="https://lin.ee/VFSORxf" target="_blank">LINE 塔羅預約</a>
   </div>
 
 </body>
