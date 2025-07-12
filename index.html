@@ -7,21 +7,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
   <style>
     body {
+      margin: 0;
+      padding: 0;
       background-image: url('background.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
       font-family: 'Noto Serif TC', serif;
       color: white;
       text-align: center;
     }
 
     h1 {
-      font-size: 40px;
-      margin-top: 30px;
+      font-size: 2.5em;
+      margin: 20px;
       animation: pulse 2s infinite;
       text-shadow: 2px 2px 10px #ff99ff;
     }
@@ -90,8 +89,8 @@
     }
 
     .links {
-      margin: 30px auto;
-      font-size: 18px;
+      margin: 20px 0;
+      font-size: 1.2em;
     }
 
     .links a {
@@ -104,13 +103,14 @@
       text-decoration: none;
       box-shadow: 0 0 10px #fff, 0 0 15px #f0f;
       transition: background 0.3s ease;
+      font-family: 'Noto Serif TC', serif;
     }
 
     .links a:hover {
       background: #ffe6ff;
     }
 
-    .embed-frame {
+    iframe {
       width: 90%;
       max-width: 800px;
       height: 400px;
@@ -123,17 +123,15 @@
   </style>
 </head>
 <body>
-
-  <h1>🌟 英格麗魔法天地 🌟</h1>
+  <h1>英格麗魔法天地</h1>
 
   <div class="scroll-container">
     <div class="slider">
-      <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg"></a>
-      <a href="S__36348139_0.jpg"><img src="S__36348139_0.jpg"></a>
-      <a href="S__36348140_0.jpg"><img src="S__36348140_0.jpg"></a>
-      <a href="S__36348141_0.jpg"><img src="S__36348141_0.jpg"></a>
-      <a href="S__36348142_0.jpg"><img src="S__36348142_0.jpg"></a>
-      <!-- 可依需要繼續加圖 -->
+      <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg" alt="圖1"></a>
+      <a href="S__36348139_0.jpg"><img src="S__36348139_0.jpg" alt="圖2"></a>
+      <a href="S__36348140_0.jpg"><img src="S__36348140_0.jpg" alt="圖3"></a>
+      <a href="S__36348141_0.jpg"><img src="S__36348141_0.jpg" alt="圖4"></a>
+      <!-- 可繼續新增圖片 -->
     </div>
   </div>
 
@@ -146,13 +144,14 @@
     <a href="#" onclick="loadLink('https://bit.ly/45mDgAs')">SoundOn</a>
     <a href="#" onclick="loadLink('https://bit.ly/3RsPBNY')">Spotify</a>
     <a href="#" onclick="loadLink('https://www.youtube.com/@Ingridstudio_2019')">YouTube</a>
-    <a href="#" onclick="loadLink('https://tw.shp.ee/cLbmVew')">蝦皮商店</a>
+    <a href="#" onclick="loadLink('https://tw.shp.ee/cLbmVew')">蝦皮</a>
     <a href="#" onclick="loadLink('https://lin.ee/VFSORxf')">LINE@</a>
   </div>
 
-  <iframe id="iframeBox" class="embed-frame" src="about:blank"></iframe>
+  <iframe id="iframeBox" src="about:blank"></iframe>
 
   <script>
+    // 點擊圖片放大
     const links = document.querySelectorAll('.slider a');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
@@ -166,9 +165,8 @@
     });
 
     function loadLink(url) {
-      document.getElementById("iframeBox").src = url;
+      document.getElementById('iframeBox').src = url;
     }
   </script>
-
 </body>
 </html>
