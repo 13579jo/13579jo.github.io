@@ -134,15 +134,7 @@
 
   <div class="quote-box" id="quoteBox">載入魔法語錄中...</div>
 
-  <div class="links">
-    <a href="https://www.instagram.com/ingridmagick4283/?hl=ja">Instagram 日常</a>
-    <a href="https://bit.ly/45mDgAs">Podcast（SoundOn）</a>
-    <a href="https://bit.ly/3RsPBNY">Podcast（Spotify）</a>
-    <a href="https://www.youtube.com/@Ingridstudio_2019">YouTube 頻道</a>
-    <a href="https://tw.shp.ee/cLbmVew">蝦皮賣場</a>
-    <a href="https://lin.ee/VFSORxf">聯絡老師 LINE@</a>
-  </div>
-
+  
   <script>
     const quotes = [
       "你的光芒值得整個宇宙為你閃耀。",
@@ -201,4 +193,113 @@
     quoteBox.textContent = randomQuote;
   </script>
 </body>
+
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英格麗魔法天地｜連結專區</title>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #220022, #550066);
+      color: #fff;
+      font-family: 'Zen Kurenaido', cursive;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 25px;
+      text-shadow: 0 0 10px #ffccff;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ffccff; }
+      to { text-shadow: 0 0 25px #fff0ff, 0 0 30px #ffccff; }
+    }
+
+    .link-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .link-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .link-box a {
+      background: #ffe6ff;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 1.2em;
+      box-shadow: 0 0 10px #fff, 0 0 15px #ff99ff;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .link-box a:hover {
+      background: #fff0ff;
+      transform: scale(1.05);
+    }
+
+    iframe {
+      width: 95%;
+      max-width: 800px;
+      height: 420px;
+      border: 3px solid #fff;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 200, 255, 0.8);
+      background: #fff;
+      margin-top: 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      .link-box a {
+        font-size: 1em;
+        padding: 8px 14px;
+      }
+
+      iframe {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>✨ 英格麗魔法天地｜連結專區 ✨</h1>
+
+  <div class="link-section">
+    <div class="link-box">
+      <a href="https://www.instagram.com/ingridmagick4283/?hl=ja" target="linkFrame">📸 Instagram</a>
+      <a href="https://bit.ly/45mDgAs" target="linkFrame">🎧 Podcast - SoundOn</a>
+      <a href="https://bit.ly/3RsPBNY" target="linkFrame">🎵 Podcast - Spotify</a>
+      <a href="https://www.youtube.com/@Ingridstudio_2019" target="linkFrame">📺 YouTube 頻道</a>
+      <a href="https://tw.shp.ee/cLbmVew" target="linkFrame">🛍️ 蝦皮賣場</a>
+      <a href="https://lin.ee/VFSORxf" target="linkFrame">💌 LINE 占卜連結</a>
+    </div>
+
+    <iframe name="linkFrame" title="連結顯示區"></iframe>
+  </div>
+
+</body>
+</html>
+
+
+  
 </html>
