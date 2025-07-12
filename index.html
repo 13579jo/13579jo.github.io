@@ -1,154 +1,204 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>英格莉的魔法天地</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英格麗魔法天地</title>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
   <style>
     body {
-      background-image: url('958628.jpg');
+      margin: 0;
+      background-image: url('background.jpg');
       background-size: cover;
-      background-attachment: fixed;
       background-position: center;
-      color: white;
-      font-family: "Noto Sans TC", sans-serif;
-      text-shadow: 1px 1px 3px black;
-      padding: 30px;
+      background-attachment: fixed;
+      color: #fff;
+      font-family: 'Zen Kurenaido', cursive;
+      padding: 20px;
     }
-
     h1 {
-      font-size: 2.5em;
       text-align: center;
-      margin-bottom: 10px;
+      font-size: 3em;
+      animation: pulse 2s infinite;
+      color: #ffe6ff;
+      text-shadow: 0 0 20px #ffb7ff;
     }
-
-    p {
-      text-align: center;
-      font-size: 1.2em;
-      margin-bottom: 30px;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
-
-    .image-scroll {
-      overflow: hidden;
-      white-space: nowrap;
-      width: 100%;
-      box-sizing: border-box;
-      margin: 30px 0;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      margin: 40px 0;
     }
-
-    .scroll-track {
-      display: inline-block;
-      white-space: nowrap;
-      animation: scroll-left 50s linear infinite;
-    }
-
-    .scroll-track img {
-      height: 180px;
-      margin-right: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.4);
-    }
-
-    @keyframes scroll-left {
-      0%   { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .links {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .links a {
+    .gallery a {
       display: block;
-      font-size: 1.2em;
-      color: #ffd700;
-      text-decoration: none;
-      margin: 10px 0;
+      border-radius: 12px;
+      border: 3px solid #fff;
+      box-shadow: 0 0 10px #ff80ff, 0 0 20px #ff80ff;
+      overflow: hidden;
+      transition: transform 0.4s ease, filter 0.4s ease;
     }
-
+    .gallery a:hover {
+      transform: scale(1.05);
+      filter: brightness(1.3);
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .quote-box {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 20px #ffccff;
+      font-size: 1.6em;
+      text-shadow: 0 0 5px #fff;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+    }
+    .links {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 1.4em;
+    }
+    .links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: #ffccff;
+      color: #000;
+      text-decoration: none;
+      box-shadow: 0 0 10px #fff, 0 0 20px #f0f;
+      transition: background 0.3s ease;
+    }
     .links a:hover {
-      color: #ffccff;
+      background: #ffe6ff;
     }
   </style>
 </head>
 <body>
+  <h1>英格麗魔法天地</h1>
 
-  <h1>歡迎來到英格莉的魔法天地 ✨</h1>
-  <p>這是我放進來的圖片展示：</p>
-
-  <div class="image-scroll">
-    <div class="scroll-track">
-      <!-- 圖片列表 -->
-      <img src="S__36348138_0.jpg">
-      <img src="S__36348139_0.jpg">
-      <img src="S__36348140_0.jpg">
-      <img src="S__36348141_0.jpg">
-      <img src="S__36348142_0.jpg">
-      <img src="S__36348143_0.jpg">
-      <img src="S__36348144_0.jpg">
-      <img src="S__36348145_0.jpg">
-      <img src="S__36348146_0.jpg">
-      <img src="S__36348147_0.jpg">
-      <img src="S__36348149_0.jpg">
-      <img src="S__36348150_0.jpg">
-      <img src="S__36348151_0.jpg">
-      <img src="S__36348152_0.jpg">
-      <img src="S__36348223_0.jpg">
-      <img src="S__36348224_0.jpg">
-      <img src="S__36348225_0.jpg">
-      <img src="S__36348226_0.jpg">
-      <img src="S__36348227_0.jpg">
-      <img src="S__36348228_0.jpg">
-      <img src="S__36348229_0.jpg">
-      <img src="S__36348230_0.jpg">
-      <img src="S__36348231_0.jpg">
-      <img src="S__36348232_0.jpg">
-      <img src="S__36348234_0.jpg">
-      <img src="S__36348235_0.jpg">
-      <img src="S__36348236_0.jpg">
-      <img src="S__36348237_0.jpg">
-      <img src="S__36348238_0.jpg">
-
-      <!-- 複製一組做無縫輪播 -->
-      <img src="S__36348138_0.jpg">
-      <img src="S__36348139_0.jpg">
-      <img src="S__36348140_0.jpg">
-      <img src="S__36348141_0.jpg">
-      <img src="S__36348142_0.jpg">
-      <img src="S__36348143_0.jpg">
-      <img src="S__36348144_0.jpg">
-      <img src="S__36348145_0.jpg">
-      <img src="S__36348146_0.jpg">
-      <img src="S__36348147_0.jpg">
-      <img src="S__36348149_0.jpg">
-      <img src="S__36348150_0.jpg">
-      <img src="S__36348151_0.jpg">
-      <img src="S__36348152_0.jpg">
-      <img src="S__36348223_0.jpg">
-      <img src="S__36348224_0.jpg">
-      <img src="S__36348225_0.jpg">
-      <img src="S__36348226_0.jpg">
-      <img src="S__36348227_0.jpg">
-      <img src="S__36348228_0.jpg">
-      <img src="S__36348229_0.jpg">
-      <img src="S__36348230_0.jpg">
-      <img src="S__36348231_0.jpg">
-      <img src="S__36348232_0.jpg">
-      <img src="S__36348234_0.jpg">
-      <img src="S__36348235_0.jpg">
-      <img src="S__36348236_0.jpg">
-      <img src="S__36348237_0.jpg">
-      <img src="S__36348238_0.jpg">
-    </div>
+  <div class="gallery">
+   <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg"></a>
+      <a href="S__36348139_0.jpg"><img src="S__36348139_0.jpg"></a>
+      <a href="S__36348140_0.jpg"><img src="S__36348140_0.jpg"></a>
+      <a href="S__36348141_0.jpg"><img src="S__36348141_0.jpg"></a>
+      <a href="S__36348142_0.jpg"><img src="S__36348142_0.jpg"></a>
+      <a href="S__36348143_0.jpg"><img src="S__36348143_0.jpg"></a>
+      <a href="S__36348144_0.jpg"><img src="S__36348144_0.jpg"></a>
+      <a href="S__36348145_0.jpg"><img src="S__36348145_0.jpg"></a>
+      <a href="S__36348146_0.jpg"><img src="S__36348146_0.jpg"></a>
+      <a href="S__36348147_0.jpg"><img src="S__36348147_0.jpg"></a>
+      <a href="S__36348149_0.jpg"><img src="S__36348149_0.jpg"></a>
+      <a href="S__36348150_0.jpg"><img src="S__36348150_0.jpg"></a>
+      <a href="S__36348151_0.jpg"><img src="S__36348151_0.jpg"></a>
+      <a href="S__36348152_0.jpg"><img src="S__36348152_0.jpg"></a>
+      <a href="S__36348153_0.jpg"><img src="S__36348153_0.jpg"></a>
+      <a href="S__36348174_0.jpg"><img src="S__36348174_0.jpg"></a>
+      <a href="S__36348175_0.jpg"><img src="S__36348175_0.jpg"></a>
+      <a href="S__36348176_0.jpg"><img src="S__36348176_0.jpg"></a>
+      <a href="S__36348177_0.jpg"><img src="S__36348177_0.jpg"></a>
+      <a href="S__36348178_0.jpg"><img src="S__36348178_0.jpg"></a>
+      <a href="S__36348179_0.jpg"><img src="S__36348179_0.jpg"></a>
+      <a href="S__36348180_0.jpg"><img src="S__36348180_0.jpg"></a>
+      <a href="S__36348181_0.jpg"><img src="S__36348181_0.jpg"></a>
+      <a href="S__36348182_0.jpg"><img src="S__36348182_0.jpg"></a>
+      <a href="S__36348183_0.jpg"><img src="S__36348183_0.jpg"></a>
+      <a href="S__36348185_0.jpg"><img src="S__36348185_0.jpg"></a>
+      <a href="S__36348186_0.jpg"><img src="S__36348186_0.jpg"></a>
+      <a href="S__36348223_0.jpg"><img src="S__36348223_0.jpg"></a>
+      <a href="S__36348224_0.jpg"><img src="S__36348224_0.jpg"></a>
+      <a href="S__36348225_0.jpg"><img src="S__36348225_0.jpg"></a>
+      <a href="S__36348226_0.jpg"><img src="S__36348226_0.jpg"></a>
+      <a href="S__36348227_0.jpg"><img src="S__36348227_0.jpg"></a>
+      <a href="S__36348228_0.jpg"><img src="S__36348228_0.jpg"></a>
+      <a href="S__36348229_0.jpg"><img src="S__36348229_0.jpg"></a>
+      <a href="S__36348230_0.jpg"><img src="S__36348230_0.jpg"></a>
+      <a href="S__36348231_0.jpg"><img src="S__36348231_0.jpg"></a>
+      <a href="S__36348232_0.jpg"><img src="S__36348232_0.jpg"></a>
+      <a href="S__36348234_0.jpg"><img src="S__36348234_0.jpg"></a>
+      <a href="S__36348235_0.jpg"><img src="S__36348235_0.jpg"></a>
+      <a href="S__36348236_0.jpg"><img src="S__36348236_0.jpg"></a>
+      <a href="S__36348237_0.jpg"><img src="S__36348237_0.jpg"></a>
+      <a href="S__36348238_0.jpg"><img src="S__36348238_0.jpg"></a>
   </div>
+
+  <div class="quote-box" id="quoteBox">載入魔法語錄中...</div>
 
   <div class="links">
-    <p>✨ 點下面這些連結探索更多魔法 ✨</p>
-    <a href="https://www.instagram.com/ingridmagick4283/?hl=ja" target="_blank">Instagram</a>
-    <a href="https://bit.ly/45mDgAs" target="_blank">Podcast</a>
-    <a href="https://tw.shp.ee/cLbmVew" target="_blank">蝦皮商店</a>
-    <a href="https://lin.ee/VFSORxf" target="_blank">LINE 塔羅預約</a>
+    <a href="https://www.instagram.com/ingridmagick4283/?hl=ja">Instagram 日常</a>
+    <a href="https://bit.ly/45mDgAs">Podcast（SoundOn）</a>
+    <a href="https://bit.ly/3RsPBNY">Podcast（Spotify）</a>
+    <a href="https://www.youtube.com/@Ingridstudio_2019">YouTube 頻道</a>
+    <a href="https://tw.shp.ee/cLbmVew">蝦皮賣場</a>
+    <a href="https://lin.ee/VFSORxf">聯絡老師 LINE@</a>
   </div>
 
+  <script>
+    const quotes = [
+      "你的光芒值得整個宇宙為你閃耀。",
+      "宇宙的安排永遠剛剛好。",
+      "你願意相信，奇蹟才會發生。",
+      "沉靜之中，蘊藏最大的力量。",
+      "就算迷路，也是在通往自己的路上。",
+      "每一次心碎，都是靈魂重組的契機。",
+      "你不需要完美，才能被愛。",
+      "愛自己，是靈性修行的第一步。",
+      "即使身陷黑暗，你依然是光的容器。",
+      "靈魂從不急躁，它相信時機。",
+      "你是一道連接天地的橋樑。",
+      "每一次深呼吸，都是療癒的開始。",
+      "順流而行，你將遇見宇宙的祝福。",
+      "接受自己的每個樣子，你就自由了。",
+      "你走過的所有路，都是為了遇見現在的你。",
+      "你並不孤單，宇宙一直與你同在。",
+      "保持純淨，是最強的守護。",
+      "善良不是軟弱，而是深層的勇敢。",
+      "你擁有轉化一切的能量。",
+      "靜心，是與高我連結的橋樑。",
+      "萬物都有靈性，你也是。",
+      "與其尋找答案，不如成為答案。",
+      "你的直覺就是來自靈魂的低語。",
+      "感謝，是最強的能量擴大器。",
+      "你值得所有你夢想的美好。",
+      "願你的心，如月光般溫柔照亮他人。",
+      "在沉默中，你會聽見靈魂的聲音。",
+      "每次跌倒都是靈魂在長高。",
+      "讓光穿透你，你就是祝福本身。",
+      "星星會為願望努力閃爍。",
+      "把悲傷交給月亮，讓它幫你安放。",
+      "心中有光，走到哪裡都能發亮。",
+      "愛是永恆的魔法。",
+      "每個呼吸，都是新的開始。",
+      "你就是你在等的奇蹟。",
+      "記得仰望星空，靈魂會得到答案。",
+      "願你擁抱每個版本的自己。",
+      "脆弱，是心打開的時候。",
+      "你值得平靜，也值得光芒。",
+      "放下不是放棄，是為了更大的接納。",
+      "你的存在，就是世界的禮物。",
+      "相信你內在的光，它從不熄滅。",
+      "與宇宙同步時，一切自然展開。",
+      "你的一笑，是這世界的彩虹。",
+      "別急，花也要時間綻放。",
+      "你的靈魂知道方向，只要你願聽。",
+      "感受，是連接神性的管道。",
+      "活著，是最神聖的奇蹟。",
+      "只要心念轉動，現實也會跟著改變。",
+      "你早已足夠。現在就可以閃耀。"
+    ];
+    const quoteBox = document.getElementById("quoteBox");
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    quoteBox.textContent = randomQuote;
+  </script>
 </body>
 </html>
