@@ -18,7 +18,7 @@
 
     h1 {
       text-align: center;
-      font-size: 3em;
+      font-size: 6vw;
       margin-top: 20px;
       animation: pulse 2s infinite;
       color: #ffe6ff;
@@ -36,24 +36,56 @@
       border: 2px solid #fff;
       border-radius: 15px;
       box-shadow: 0 0 20px #ffccff;
-      font-size: 1.4em;
+      font-size: 4vw;
       padding: 20px;
       max-width: 90%;
       margin: 20px auto;
       text-align: center;
     }
 
-    .carousel {
-      display: flex;
-      gap: 10px;
-      animation: scroll 40s linear infinite;
-      width: max-content;
-      margin: 30px auto;
+    iframe {
+      width: 90%;
+      height: 60vh;
+      border: none;
+      margin: 20px auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #fff;
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 8px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: #ffccff;
+      color: #000;
+      font-size: 4vw;
+      text-decoration: none;
+      box-shadow: 0 0 10px #fff, 0 0 15px #f0f;
+    }
+
+    .links a:hover {
+      background: #ffe6ff;
     }
 
     .scroll-wrapper {
       overflow: hidden;
       width: 100%;
+    }
+
+    .carousel {
+      display: flex;
+      gap: 10px;
+      animation: scroll 60s linear infinite;
+      width: max-content;
+      margin: 30px auto;
     }
 
     @keyframes scroll {
@@ -62,7 +94,7 @@
     }
 
     .image-box img {
-      width: 100px;
+      width: 20vw;
       height: auto;
       border: 2px solid #fff;
       border-radius: 10px;
@@ -76,35 +108,11 @@
       filter: brightness(1.5);
     }
 
-    iframe {
-      width: 90%;
-      height: 400px;
-      border: none;
-      margin: 20px auto;
-      display: block;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #fff;
-    }
-
-    .links {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .links a {
-      display: inline-block;
-      margin: 8px;
-      padding: 8px 16px;
-      border-radius: 8px;
-      background: #ffccff;
-      color: #000;
-      font-size: 1.2em;
-      text-decoration: none;
-      box-shadow: 0 0 10px #fff, 0 0 15px #f0f;
-    }
-
-    .links a:hover {
-      background: #ffe6ff;
+    @media (min-width: 768px) {
+      h1 { font-size: 3em; }
+      .quote-box { font-size: 1.5em; }
+      .links a { font-size: 1.2em; }
+      .image-box img { width: 120px; }
     }
   </style>
 </head>
@@ -141,151 +149,7 @@
 
   <script>
     const quotes = [
-      <!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>英格麗魔法天地</title>
-  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'ZCOOL KuaiLe', cursive;
-      background-image: url('background.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: #fff;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 3em;
-      margin-top: 20px;
-      animation: pulse 2s infinite;
-      color: #ffe6ff;
-      text-shadow: 0 0 20px #ffb7ff;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-
-    .quote-box {
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid #fff;
-      border-radius: 15px;
-      box-shadow: 0 0 20px #ffccff;
-      font-size: 1.4em;
-      padding: 20px;
-      max-width: 90%;
-      margin: 20px auto;
-      text-align: center;
-    }
-
-    .carousel {
-      display: flex;
-      gap: 10px;
-      animation: scroll 40s linear infinite;
-      width: max-content;
-      margin: 30px auto;
-    }
-
-    .scroll-wrapper {
-      overflow: hidden;
-      width: 100%;
-    }
-
-    @keyframes scroll {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-
-    .image-box img {
-      width: 100px;
-      height: auto;
-      border: 2px solid #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #ffccff;
-      margin-right: 10px;
-      transition: transform 0.3s, filter 0.3s;
-    }
-
-    .image-box img:hover {
-      transform: scale(1.2);
-      filter: brightness(1.5);
-    }
-
-    iframe {
-      width: 90%;
-      height: 400px;
-      border: none;
-      margin: 20px auto;
-      display: block;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #fff;
-    }
-
-    .links {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .links a {
-      display: inline-block;
-      margin: 8px;
-      padding: 8px 16px;
-      border-radius: 8px;
-      background: #ffccff;
-      color: #000;
-      font-size: 1.2em;
-      text-decoration: none;
-      box-shadow: 0 0 10px #fff, 0 0 15px #f0f;
-    }
-
-    .links a:hover {
-      background: #ffe6ff;
-    }
-  </style>
-</head>
-<body>
-  <h1>英格麗魔法天地</h1>
-
-  <div class="quote-box" id="quoteBox">載入魔法語錄中...</div>
-
-  <iframe src="https://13579jo.github.io/tarot-website1/"></iframe>
-
-  <div class="links">
-    <a href="#" onclick="loadLink('https://www.instagram.com/ingridmagick4283/?hl=ja')">Instagram</a>
-    <a href="#" onclick="loadLink('https://bit.ly/45mDgAs')">SoundOn</a>
-    <a href="#" onclick="loadLink('https://bit.ly/3RsPBNY')">Spotify</a>
-    <a href="#" onclick="loadLink('https://www.youtube.com/@Ingridstudio_2019')">YouTube</a>
-    <a href="#" onclick="loadLink('https://tw.shp.ee/cLbmVew')">蝦皮</a>
-    <a href="#" onclick="loadLink('https://lin.ee/VFSORxf')">LINE@</a>
-  </div>
-
-  <iframe id="iframeBox"></iframe>
-
-  <div class="scroll-wrapper">
-    <div class="carousel">
-      <div class="image-box"><img src="S__36348138_0.jpg"></div>
-      <div class="image-box"><img src="S__36348139_0.jpg"></div>
-      <div class="image-box"><img src="S__36348140_0.jpg"></div>
-      <div class="image-box"><img src="S__36348141_0.jpg"></div>
-      <div class="image-box"><img src="S__36348142_0.jpg"></div>
-      <div class="image-box"><img src="S__36348143_0.jpg"></div>
-      <div class="image-box"><img src="S__36348144_0.jpg"></div>
-      <div class="image-box"><img src="S__36348145_0.jpg"></div>
-    </div>
-  </div>
-
-  <script>
-    const quotes = [
-      
-"你的光芒值得整個宇宙為你閃耀。",
+     "你的光芒值得整個宇宙為你閃耀。",
       "宇宙的安排永遠剛剛好。",
       "你願意相信，奇蹟才會發生。",
       "沉靜之中，蘊藏最大的力量。",
@@ -337,6 +201,7 @@
       "你早已足夠。現在就可以閃耀。"
 
     ];
+
     const quoteBox = document.getElementById("quoteBox");
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     quoteBox.textContent = randomQuote;
@@ -348,14 +213,3 @@
 </body>
 </html>
 
-    ];
-    const quoteBox = document.getElementById("quoteBox");
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    quoteBox.textContent = randomQuote;
-
-    function loadLink(url) {
-      document.getElementById("iframeBox").src = url;
-    }
-  </script>
-</body>
-</html>
