@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>英格麗魔法天地</title>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
+      font-family: 'ZCOOL KuaiLe', cursive;
       background-image: url('background.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       color: #fff;
-      font-family: 'ZCOOL KuaiLe', cursive;
-      padding: 20px;
     }
 
     h1 {
       text-align: center;
       font-size: 3em;
+      margin-top: 20px;
       animation: pulse 2s infinite;
       color: #ffe6ff;
       text-shadow: 0 0 20px #ffb7ff;
@@ -36,84 +36,75 @@
       border: 2px solid #fff;
       border-radius: 15px;
       box-shadow: 0 0 20px #ffccff;
-      font-size: 1.5em;
-      text-shadow: 0 0 5px #fff;
+      font-size: 1.4em;
       padding: 20px;
       max-width: 90%;
       margin: 20px auto;
       text-align: center;
-      font-family: 'ZCOOL KuaiLe', cursive;
     }
 
     .carousel {
       display: flex;
-      overflow-x: auto;
       gap: 10px;
-      padding: 20px 0;
-      scroll-behavior: smooth;
+      animation: scroll 40s linear infinite;
+      width: max-content;
+      margin: 30px auto;
     }
 
-    .carousel::-webkit-scrollbar {
-      height: 6px;
+    .scroll-wrapper {
+      overflow: hidden;
+      width: 100%;
     }
 
-    .carousel::-webkit-scrollbar-thumb {
-      background: #ccc;
-      border-radius: 4px;
-    }
-
-    .image-box {
-      flex: 0 0 auto;
-      border: 2px solid #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 128, 255, 0.8);
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-    .image-box:hover {
-      transform: scale(1.05);
-      filter: brightness(1.3);
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
 
     .image-box img {
-      width: 80px;
+      width: 100px;
       height: auto;
-      border-radius: 8px;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #ffccff;
+      margin-right: 10px;
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .image-box img:hover {
+      transform: scale(1.2);
+      filter: brightness(1.5);
+    }
+
+    iframe {
+      width: 90%;
+      height: 400px;
+      border: none;
+      margin: 20px auto;
       display: block;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #fff;
     }
 
     .links {
-      margin-top: 30px;
       text-align: center;
-      font-size: 1.2em;
+      margin-top: 30px;
     }
 
     .links a {
       display: inline-block;
       margin: 8px;
       padding: 8px 16px;
-      border-radius: 6px;
+      border-radius: 8px;
       background: #ffccff;
       color: #000;
+      font-size: 1.2em;
       text-decoration: none;
       box-shadow: 0 0 10px #fff, 0 0 15px #f0f;
-      transition: background 0.3s ease;
-      font-family: 'ZCOOL KuaiLe', cursive;
     }
 
     .links a:hover {
       background: #ffe6ff;
-    }
-
-    .embed-frame {
-      width: 90%;
-      max-width: 800px;
-      height: 500px;
-      border: none;
-      margin: 30px auto;
-      display: block;
-      box-shadow: 0 0 20px rgba(255,255,255,0.4);
-      border-radius: 10px;
     }
   </style>
 </head>
@@ -122,16 +113,9 @@
 
   <div class="quote-box" id="quoteBox">載入魔法語錄中...</div>
 
-  <div class="carousel">
-    <div class="image-box"><img src="S__36348141_0.jpg" alt="圖片1"></div>
-    <div class="image-box"><img src="S__36348142_0.jpg" alt="圖片2"></div>
-    <div class="image-box"><img src="S__36348143_0.jpg" alt="圖片3"></div>
-    <div class="image-box"><img src="S__36348144_0.jpg" alt="圖片4"></div>
-    <div class="image-box"><img src="S__36348145_0.jpg" alt="圖片5"></div>
-  </div>
+  <iframe src="https://13579jo.github.io/tarot-website1/"></iframe>
 
   <div class="links">
-    <a href="#" onclick="loadLink('https://13579jo.github.io/tarot-website1/')">神秘塔羅</a>
     <a href="#" onclick="loadLink('https://www.instagram.com/ingridmagick4283/?hl=ja')">Instagram</a>
     <a href="#" onclick="loadLink('https://bit.ly/45mDgAs')">SoundOn</a>
     <a href="#" onclick="loadLink('https://bit.ly/3RsPBNY')">Spotify</a>
@@ -140,11 +124,168 @@
     <a href="#" onclick="loadLink('https://lin.ee/VFSORxf')">LINE@</a>
   </div>
 
-  <iframe id="iframeBox" class="embed-frame" src="https://13579jo.github.io/tarot-website1/"></iframe>
+  <iframe id="iframeBox"></iframe>
+
+  <div class="scroll-wrapper">
+    <div class="carousel">
+      <div class="image-box"><img src="S__36348138_0.jpg"></div>
+      <div class="image-box"><img src="S__36348139_0.jpg"></div>
+      <div class="image-box"><img src="S__36348140_0.jpg"></div>
+      <div class="image-box"><img src="S__36348141_0.jpg"></div>
+      <div class="image-box"><img src="S__36348142_0.jpg"></div>
+      <div class="image-box"><img src="S__36348143_0.jpg"></div>
+      <div class="image-box"><img src="S__36348144_0.jpg"></div>
+      <div class="image-box"><img src="S__36348145_0.jpg"></div>
+    </div>
+  </div>
 
   <script>
     const quotes = [
-      "你的光芒值得整個宇宙為你閃耀。",
+      <!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英格麗魔法天地</title>
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'ZCOOL KuaiLe', cursive;
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      margin-top: 20px;
+      animation: pulse 2s infinite;
+      color: #ffe6ff;
+      text-shadow: 0 0 20px #ffb7ff;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .quote-box {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #fff;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #ffccff;
+      font-size: 1.4em;
+      padding: 20px;
+      max-width: 90%;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .carousel {
+      display: flex;
+      gap: 10px;
+      animation: scroll 40s linear infinite;
+      width: max-content;
+      margin: 30px auto;
+    }
+
+    .scroll-wrapper {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .image-box img {
+      width: 100px;
+      height: auto;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #ffccff;
+      margin-right: 10px;
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .image-box img:hover {
+      transform: scale(1.2);
+      filter: brightness(1.5);
+    }
+
+    iframe {
+      width: 90%;
+      height: 400px;
+      border: none;
+      margin: 20px auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #fff;
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 8px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: #ffccff;
+      color: #000;
+      font-size: 1.2em;
+      text-decoration: none;
+      box-shadow: 0 0 10px #fff, 0 0 15px #f0f;
+    }
+
+    .links a:hover {
+      background: #ffe6ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>英格麗魔法天地</h1>
+
+  <div class="quote-box" id="quoteBox">載入魔法語錄中...</div>
+
+  <iframe src="https://13579jo.github.io/tarot-website1/"></iframe>
+
+  <div class="links">
+    <a href="#" onclick="loadLink('https://www.instagram.com/ingridmagick4283/?hl=ja')">Instagram</a>
+    <a href="#" onclick="loadLink('https://bit.ly/45mDgAs')">SoundOn</a>
+    <a href="#" onclick="loadLink('https://bit.ly/3RsPBNY')">Spotify</a>
+    <a href="#" onclick="loadLink('https://www.youtube.com/@Ingridstudio_2019')">YouTube</a>
+    <a href="#" onclick="loadLink('https://tw.shp.ee/cLbmVew')">蝦皮</a>
+    <a href="#" onclick="loadLink('https://lin.ee/VFSORxf')">LINE@</a>
+  </div>
+
+  <iframe id="iframeBox"></iframe>
+
+  <div class="scroll-wrapper">
+    <div class="carousel">
+      <div class="image-box"><img src="S__36348138_0.jpg"></div>
+      <div class="image-box"><img src="S__36348139_0.jpg"></div>
+      <div class="image-box"><img src="S__36348140_0.jpg"></div>
+      <div class="image-box"><img src="S__36348141_0.jpg"></div>
+      <div class="image-box"><img src="S__36348142_0.jpg"></div>
+      <div class="image-box"><img src="S__36348143_0.jpg"></div>
+      <div class="image-box"><img src="S__36348144_0.jpg"></div>
+      <div class="image-box"><img src="S__36348145_0.jpg"></div>
+    </div>
+  </div>
+
+  <script>
+    const quotes = [
+      
+"你的光芒值得整個宇宙為你閃耀。",
       "宇宙的安排永遠剛剛好。",
       "你願意相信，奇蹟才會發生。",
       "沉靜之中，蘊藏最大的力量。",
@@ -194,6 +335,19 @@
       "活著，是最神聖的奇蹟。",
       "只要心念轉動，現實也會跟著改變。",
       "你早已足夠。現在就可以閃耀。"
+
+    ];
+    const quoteBox = document.getElementById("quoteBox");
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    quoteBox.textContent = randomQuote;
+
+    function loadLink(url) {
+      document.getElementById("iframeBox").src = url;
+    }
+  </script>
+</body>
+</html>
+
     ];
     const quoteBox = document.getElementById("quoteBox");
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
