@@ -61,16 +61,6 @@
       100% { transform: translateX(-100%); }
     }
 
-    iframe {
-      width: 90%;
-      height: 350px;
-      display: block;
-      margin: 20px auto;
-      border-radius: 12px;
-      border: 2px solid #fff;
-      box-shadow: 0 0 20px #fff;
-    }
-
     .quote-box {
       position: fixed;
       bottom: 20px;
@@ -95,7 +85,7 @@
   <div class="carousel-wrapper">
     <div class="carousel">
       <!-- 所有圖片 -->
-       <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg"></a>
+      <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg"></a>
       <a href="S__36348139_0.jpg"><img src="S__36348139_0.jpg"></a>
       <a href="S__36348140_0.jpg"><img src="S__36348140_0.jpg"></a>
       <a href="S__36348141_0.jpg"><img src="S__36348141_0.jpg"></a>
@@ -137,30 +127,14 @@
       <a href="S__36348236_0.jpg"><img src="S__36348236_0.jpg"></a>
       <a href="S__36348237_0.jpg"><img src="S__36348237_0.jpg"></a>
       <a href="S__36348238_0.jpg"><img src="S__36348238_0.jpg"></a>
-        
-
-      <!-- 省略部分圖片以簡潔為主 -->
     </div>
   </div>
-
-  <!-- 嵌入內容貼文區 -->
-  <iframe src="https://13579jo.github.io/tarot-website1/"></iframe>
-
-  <iframe src="https://www.instagram.com/ingridmagick4283/?hl=ja"></iframe>
-
-  <iframe src="https://bit.ly/45mDgAs"></iframe>
-
-  <iframe src="https://bit.ly/3RsPBNY"></iframe>
-
-  <iframe src="https://www.youtube.com/@Ingridstudio_2019"></iframe>
-
-  <iframe src="https://tw.shp.ee/cLbmVew"></iframe>
 
   <div class="quote-box" id="quoteBox">載入魔法語錄中...</div>
 
   <script>
     const quotes = [
-     "你的光芒值得整個宇宙為你閃耀。",
+      "你的光芒值得整個宇宙為你閃耀。",
       "宇宙的安排永遠剛剛好。",
       "你願意相信，奇蹟才會發生。",
       "沉靜之中，蘊藏最大的力量。",
@@ -210,7 +184,6 @@
       "活著，是最神聖的奇蹟。",
       "只要心念轉動，現實也會跟著改變。",
       "你早已足夠。現在就可以閃耀。"
-
     ];
     const quoteBox = document.getElementById("quoteBox");
     quoteBox.textContent = quotes[Math.floor(Math.random() * quotes.length)];
