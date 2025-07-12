@@ -4,16 +4,60 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>歡迎來到我的部落格</title>
+  <title>家家的魔法小天地</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Serif TC', serif;
+      background: url('https://i.imgur.com/H1bWbpZ.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 40px 20px;
+      margin: 60px auto;
+      max-width: 500px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 30px;
+    }
+    .button-link {
+      display: block;
+      background: #fff;
+      color: #6B3FA0;
+      text-decoration: none;
+      padding: 12px 20px;
+      margin: 10px auto;
+      border-radius: 30px;
+      max-width: 300px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .button-link:hover {
+      background: #d1b3ff;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-  <h1>你好，我是家家 🧙‍♀️✨</h1>
-  <p>這是我的魔法小天地，可以點這些連結看看喔：</p>
-  <ul>
-    <li><a href="https://www.instagram.com/ingridmagick4283" target="_blank">Instagram</a></li>
-    <li><a href="https://bit.ly/45mDgAs" target="_blank">Podcast</a></li>
-    <li><a href="https://tw.shp.ee/cLbmVew" target="_blank">蝦皮商店</a></li>
-    <li><a href="https://lin.ee/VFSORxf" target="_blank">LINE 塔羅預約</a></li>
-  </ul>
+  <div class="container">
+    <h1>你好，我是家家 🧙‍♀️✨</h1>
+    <p>這是我的魔法小天地，歡迎點點這些入口🔮</p>
+    
+    <a class="button-link" href="https://www.instagram.com/ingridmagick4283" target="_blank">Instagram</a>
+    <a class="button-link" href="https://bit.ly/45mDgAs" target="_blank">Podcast 聲音療癒</a>
+    <a class="button-link" href="https://tw.shp.ee/cLbmVew" target="_blank">蝦皮商店</a>
+    <a class="button-link" href="https://lin.ee/VFSORxf" target="_blank">LINE 塔羅預約</a>
+  </div>
 </body>
 </html>
