@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -29,42 +28,56 @@
       50% { transform: scale(1.1); }
       100% { transform: scale(1); }
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 15px;
-      margin: 40px 0;
-    }
-    .gallery a {
-      display: block;
-      border-radius: 12px;
-      border: 3px solid #fff;
-      box-shadow: 0 0 10px #ff80ff, 0 0 20px #ff80ff;
-      overflow: hidden;
-      transition: transform 0.4s ease, filter 0.4s ease;
-    }
-    .gallery a:hover {
-      transform: scale(1.05);
-      filter: brightness(1.3);
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
     .quote-box {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #fff;
       border-radius: 15px;
-      padding: 30px;
       box-shadow: 0 0 20px #ffccff;
       font-size: 1.6em;
       text-shadow: 0 0 5px #fff;
-      text-align: center;
+      padding: 25px;
       max-width: 700px;
-      margin: 0 auto 40px auto;
+      margin: 20px auto;
+      text-align: center;
+    }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 20px 0;
+      scroll-behavior: smooth;
+    }
+    .carousel::-webkit-scrollbar {
+      height: 6px;
+    }
+    .carousel::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 4px;
+    }
+    .image-box {
+      flex: 0 0 auto;
+      border: 3px solid #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 128, 255, 0.8);
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .image-box:hover {
+      transform: scale(1.05);
+      filter: brightness(1.3);
+    }
+    .image-box img {
+      width: 140px;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+    }
+    @media screen and (max-width: 600px) {
+      .image-box img {
+        width: 110px;
+      }
     }
     .links {
-      margin-top: 50px;
+      margin-top: 40px;
       text-align: center;
       font-size: 1.4em;
     }
@@ -86,55 +99,27 @@
 </head>
 <body>
   <h1>英格麗魔法天地</h1>
-
-  <div class="gallery">
-   <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg"></a>
-      <a href="S__36348139_0.jpg"><img src="S__36348139_0.jpg"></a>
-      <a href="S__36348140_0.jpg"><img src="S__36348140_0.jpg"></a>
-      <a href="S__36348141_0.jpg"><img src="S__36348141_0.jpg"></a>
-      <a href="S__36348142_0.jpg"><img src="S__36348142_0.jpg"></a>
-      <a href="S__36348143_0.jpg"><img src="S__36348143_0.jpg"></a>
-      <a href="S__36348144_0.jpg"><img src="S__36348144_0.jpg"></a>
-      <a href="S__36348145_0.jpg"><img src="S__36348145_0.jpg"></a>
-      <a href="S__36348146_0.jpg"><img src="S__36348146_0.jpg"></a>
-      <a href="S__36348147_0.jpg"><img src="S__36348147_0.jpg"></a>
-      <a href="S__36348149_0.jpg"><img src="S__36348149_0.jpg"></a>
-      <a href="S__36348150_0.jpg"><img src="S__36348150_0.jpg"></a>
-      <a href="S__36348151_0.jpg"><img src="S__36348151_0.jpg"></a>
-      <a href="S__36348152_0.jpg"><img src="S__36348152_0.jpg"></a>
-      <a href="S__36348153_0.jpg"><img src="S__36348153_0.jpg"></a>
-      <a href="S__36348174_0.jpg"><img src="S__36348174_0.jpg"></a>
-      <a href="S__36348175_0.jpg"><img src="S__36348175_0.jpg"></a>
-      <a href="S__36348176_0.jpg"><img src="S__36348176_0.jpg"></a>
-      <a href="S__36348177_0.jpg"><img src="S__36348177_0.jpg"></a>
-      <a href="S__36348178_0.jpg"><img src="S__36348178_0.jpg"></a>
-      <a href="S__36348179_0.jpg"><img src="S__36348179_0.jpg"></a>
-      <a href="S__36348180_0.jpg"><img src="S__36348180_0.jpg"></a>
-      <a href="S__36348181_0.jpg"><img src="S__36348181_0.jpg"></a>
-      <a href="S__36348182_0.jpg"><img src="S__36348182_0.jpg"></a>
-      <a href="S__36348183_0.jpg"><img src="S__36348183_0.jpg"></a>
-      <a href="S__36348185_0.jpg"><img src="S__36348185_0.jpg"></a>
-      <a href="S__36348186_0.jpg"><img src="S__36348186_0.jpg"></a>
-      <a href="S__36348223_0.jpg"><img src="S__36348223_0.jpg"></a>
-      <a href="S__36348224_0.jpg"><img src="S__36348224_0.jpg"></a>
-      <a href="S__36348225_0.jpg"><img src="S__36348225_0.jpg"></a>
-      <a href="S__36348226_0.jpg"><img src="S__36348226_0.jpg"></a>
-      <a href="S__36348227_0.jpg"><img src="S__36348227_0.jpg"></a>
-      <a href="S__36348228_0.jpg"><img src="S__36348228_0.jpg"></a>
-      <a href="S__36348229_0.jpg"><img src="S__36348229_0.jpg"></a>
-      <a href="S__36348230_0.jpg"><img src="S__36348230_0.jpg"></a>
-      <a href="S__36348231_0.jpg"><img src="S__36348231_0.jpg"></a>
-      <a href="S__36348232_0.jpg"><img src="S__36348232_0.jpg"></a>
-      <a href="S__36348234_0.jpg"><img src="S__36348234_0.jpg"></a>
-      <a href="S__36348235_0.jpg"><img src="S__36348235_0.jpg"></a>
-      <a href="S__36348236_0.jpg"><img src="S__36348236_0.jpg"></a>
-      <a href="S__36348237_0.jpg"><img src="S__36348237_0.jpg"></a>
-      <a href="S__36348238_0.jpg"><img src="S__36348238_0.jpg"></a>
-  </div>
-
   <div class="quote-box" id="quoteBox">載入魔法語錄中...</div>
-
-  
+  <div class="carousel">
+    <div class="image-box"><img src="S__36348141_0.jpg" alt="圖片1"></div>
+    <div class="image-box"><img src="S__36348142_0.jpg" alt="圖片2"></div>
+    <div class="image-box"><img src="S__36348143_0.jpg" alt="圖片3"></div>
+    <div class="image-box"><img src="S__36348144_0.jpg" alt="圖片4"></div>
+    <div class="image-box"><img src="S__36348145_0.jpg" alt="圖片5"></div>
+    <div class="image-box"><img src="S__36348146_0.jpg" alt="圖片6"></div>
+    <div class="image-box"><img src="S__36348147_0.jpg" alt="圖片7"></div>
+    <div class="image-box"><img src="S__36348148_0.jpg" alt="圖片8"></div>
+    <div class="image-box"><img src="S__36348149_0.jpg" alt="圖片9"></div>
+    <div class="image-box"><img src="S__36348150_0.jpg" alt="圖片10"></div>
+  </div>
+  <div class="links">
+    <a href="https://www.instagram.com/ingridmagick4283/?hl=ja">Instagram</a>
+    <a href="https://bit.ly/45mDgAs">SoundOn</a>
+    <a href="https://bit.ly/3RsPBNY">Spotify</a>
+    <a href="https://www.youtube.com/@Ingridstudio_2019">YouTube</a>
+    <a href="https://tw.shp.ee/cLbmVew">蝦皮</a>
+    <a href="https://lin.ee/VFSORxf">LINE@</a>
+  </div>
   <script>
     const quotes = [
       "你的光芒值得整個宇宙為你閃耀。",
@@ -193,113 +178,4 @@
     quoteBox.textContent = randomQuote;
   </script>
 </body>
-
-
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>英格麗魔法天地｜連結專區</title>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background: linear-gradient(to bottom right, #220022, #550066);
-      color: #fff;
-      font-family: 'Zen Kurenaido', cursive;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 25px;
-      text-shadow: 0 0 10px #ffccff;
-      animation: glow 2s infinite alternate;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #ffccff; }
-      to { text-shadow: 0 0 25px #fff0ff, 0 0 30px #ffccff; }
-    }
-
-    .link-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .link-box {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .link-box a {
-      background: #ffe6ff;
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-size: 1.2em;
-      box-shadow: 0 0 10px #fff, 0 0 15px #ff99ff;
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    .link-box a:hover {
-      background: #fff0ff;
-      transform: scale(1.05);
-    }
-
-    iframe {
-      width: 95%;
-      max-width: 800px;
-      height: 420px;
-      border: 3px solid #fff;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(255, 200, 255, 0.8);
-      background: #fff;
-      margin-top: 10px;
-    }
-
-    @media screen and (max-width: 600px) {
-      h1 {
-        font-size: 2em;
-      }
-
-      .link-box a {
-        font-size: 1em;
-        padding: 8px 14px;
-      }
-
-      iframe {
-        height: 300px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <h1>✨ 英格麗魔法天地｜連結專區 ✨</h1>
-
-  <div class="link-section">
-    <div class="link-box">
-      <a href="https://www.instagram.com/ingridmagick4283/?hl=ja" target="linkFrame">📸 Instagram</a>
-      <a href="https://bit.ly/45mDgAs" target="linkFrame">🎧 Podcast - SoundOn</a>
-      <a href="https://bit.ly/3RsPBNY" target="linkFrame">🎵 Podcast - Spotify</a>
-      <a href="https://www.youtube.com/@Ingridstudio_2019" target="linkFrame">📺 YouTube 頻道</a>
-      <a href="https://tw.shp.ee/cLbmVew" target="linkFrame">🛍️ 蝦皮賣場</a>
-      <a href="https://lin.ee/VFSORxf" target="linkFrame">💌 LINE 占卜連結</a>
-    </div>
-
-    <iframe name="linkFrame" title="連結顯示區"></iframe>
-  </div>
-
-</body>
-</html>
-
-
-  
 </html>
