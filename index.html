@@ -1,222 +1,224 @@
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>英格麗魔法天地</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Noto Serif TC', serif;
-      background: url('958628.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
+      background-color: #fff;
+      color: #333;
     }
-
-    header {
-      text-align: center;
-      padding: 60px 20px 30px;
+    .container {
+      padding: 20px;
+      max-width: 720px;
+      margin: auto;
     }
-
-    header h1 {
-      font-size: 48px;
-      color: #a96ed7;
-      text-shadow: 2px 2px 5px white;
-      letter-spacing: 8px;
-    }
-
-    header p {
-      font-size: 20px;
-      margin-top: 10px;
-      color: #ffffffcc;
-    }
-
     .section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
-
-    .section h2 {
-      color: #a96ed7;
-      text-shadow: 2px 2px 4px white;
-      font-size: 28px;
-      margin-bottom: 20px;
+    h1, h2 {
+      color: #6b2ca0;
       text-align: center;
     }
-
-    .slider {
+    .image-carousel {
       display: flex;
       overflow-x: auto;
-      gap: 10px;
-      scroll-snap-type: x mandatory;
-      padding: 10px;
+      gap: 12px;
     }
-
-    .slider img {
-      width: 300px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.6);
-      scroll-snap-align: center;
-      flex-shrink: 0;
+    .image-carousel img {
+      height: 180px;
+      width: auto;
+      border-radius: 8px;
     }
-
     .quote-box {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 20px;
-      border-radius: 20px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: #6b2ca0;
+      border: 1px dashed #6b2ca0;
+      padding: 10px;
+      border-radius: 8px;
+      background: #f9f5fc;
       text-align: center;
-      font-size: 18px;
-      color: #a96ed7;
-      text-shadow: 1px 1px 3px white;
-      margin: 40px auto;
-      width: 90%;
-      max-width: 600px;
     }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 32px;
-        letter-spacing: 4px;
-      }
-
-      header p {
-        font-size: 16px;
-        margin-top: 8px;
-      }
-
-      .section h2 {
-        font-size: 22px;
-      }
-
-      .quote-box {
-        font-size: 16px;
-        line-height: 1.8;
-        padding: 18px;
-      }
-
-      .slider img {
-        width: 80vw;
-      }
+    .dropdown {
+      text-align: center;
+    }
+    .dropdown select {
+      padding: 10px;
+      font-size: 16px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      background: #6b2ca0;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 16px;
+      text-decoration: none;
     }
   </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const quotes = [
-        "你的光芒值得整個宇宙為你閃耀。",
-        "宇宙的安排永遠剛剛好。",
-        "你願意相信，奇蹟才會發生。",
-        "沉靜之中，蘊藏最大的力量。",
-        "就算迷路，也是在通往自己的路上。",
-        "每一次心碎，都是靈魂重組的契機。",
-        "你不需要完美，才能被愛。",
-        "愛自己，是靈性修行的第一步。",
-        "即使身陷黑暗，你依然是光的容器。",
-        "靈魂從不急躁，它相信時機。",
-        "你是一道連接天地的橋樑。",
-        "每一次深呼吸，都是療癒的開始。",
-        "順流而行，你將遇見宇宙的祝福。",
-        "接受自己的每個樣子，你就自由了。",
-        "你走過的所有路，都是為了遇見現在的你。",
-        "你並不孤單，宇宙一直與你同在。",
-        "保持純淨，是最強的守護。",
-        "善良不是軟弱，而是深層的勇敢。",
-        "你擁有轉化一切的能量。",
-        "靜心，是與高我連結的橋樑。",
-        "萬物都有靈性，你也是。",
-        "與其尋找答案，不如成為答案。",
-        "你的直覺就是來自靈魂的低語。",
-        "感謝，是最強的能量擴大器。",
-        "你值得所有你夢想的美好。",
-        "願你的心，如月光般溫柔照亮他人。",
-        "在沉默中，你會聽見靈魂的聲音。",
-        "每次跌倒都是靈魂在長高。",
-        "讓光穿透你，你就是祝福本身。",
-        "星星會為願望努力閃爍。",
-        "把悲傷交給月亮，讓它幫你安放。",
-        "心中有光，走到哪裡都能發亮。",
-        "愛是永恆的魔法。",
-        "每個呼吸，都是新的開始。",
-        "你就是你在等的奇蹟。",
-        "記得仰望星空，靈魂會得到答案。",
-        "願你擁抱每個版本的自己。",
-        "脆弱，是心打開的時候。",
-        "你值得平靜，也值得光芒。",
-        "放下不是放棄，是為了更大的接納。",
-        "你的存在，就是世界的禮物。",
-        "相信你內在的光，它從不熄滅。",
-        "與宇宙同步時，一切自然展開。",
-        "你的一笑，是這世界的彩虹。",
-        "別急，花也要時間綻放。",
-        "你的靈魂知道方向，只要你願聽。",
-        "感受，是連接神性的管道。",
-        "活著，是最神聖的奇蹟。",
-        "只要心念轉動，現實也會跟著改變。",
-        "你早已足夠。現在就可以閃耀。"
-      ];
-      const box = document.querySelector('.quote-box');
-      box.innerText = quotes[Math.floor(Math.random() * quotes.length)];
-    });
-  </script>
 </head>
 <body>
-  <header>
+  <div class="container">
     <h1>英格麗魔法天地</h1>
-    <p>用靈性與知識連結宇宙的你</p>
-  </header>
 
-  <section class="section">
-    <h2>作品展示</h2>
-    <div class="slider">
-     <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg"></a>
-      <a href="S__36348139_0.jpg"><img src="S__36348139_0.jpg"></a>
-      <a href="S__36348140_0.jpg"><img src="S__36348140_0.jpg"></a>
-      <a href="S__36348141_0.jpg"><img src="S__36348141_0.jpg"></a>
-      <a href="S__36348142_0.jpg"><img src="S__36348142_0.jpg"></a>
-      <a href="S__36348143_0.jpg"><img src="S__36348143_0.jpg"></a>
-      <a href="S__36348144_0.jpg"><img src="S__36348144_0.jpg"></a>
-      <a href="S__36348145_0.jpg"><img src="S__36348145_0.jpg"></a>
-      <a href="S__36348146_0.jpg"><img src="S__36348146_0.jpg"></a>
-      <a href="S__36348147_0.jpg"><img src="S__36348147_0.jpg"></a>
-      <a href="S__36348149_0.jpg"><img src="S__36348149_0.jpg"></a>
-      <a href="S__36348150_0.jpg"><img src="S__36348150_0.jpg"></a>
-      <a href="S__36348151_0.jpg"><img src="S__36348151_0.jpg"></a>
-      <a href="S__36348152_0.jpg"><img src="S__36348152_0.jpg"></a>
-      <a href="S__36348153_0.jpg"><img src="S__36348153_0.jpg"></a>
-      <a href="S__36348174_0.jpg"><img src="S__36348174_0.jpg"></a>
-      <a href="S__36348175_0.jpg"><img src="S__36348175_0.jpg"></a>
-      <a href="S__36348176_0.jpg"><img src="S__36348176_0.jpg"></a>
-      <a href="S__36348177_0.jpg"><img src="S__36348177_0.jpg"></a>
-      <a href="S__36348178_0.jpg"><img src="S__36348178_0.jpg"></a>
-      <a href="S__36348179_0.jpg"><img src="S__36348179_0.jpg"></a>
-      <a href="S__36348180_0.jpg"><img src="S__36348180_0.jpg"></a>
-      <a href="S__36348181_0.jpg"><img src="S__36348181_0.jpg"></a>
-      <a href="S__36348182_0.jpg"><img src="S__36348182_0.jpg"></a>
-      <a href="S__36348183_0.jpg"><img src="S__36348183_0.jpg"></a>
-      <a href="S__36348185_0.jpg"><img src="S__36348185_0.jpg"></a>
-      <a href="S__36348186_0.jpg"><img src="S__36348186_0.jpg"></a>
-      <a href="S__36348223_0.jpg"><img src="S__36348223_0.jpg"></a>
-      <a href="S__36348224_0.jpg"><img src="S__36348224_0.jpg"></a>
-      <a href="S__36348225_0.jpg"><img src="S__36348225_0.jpg"></a>
-      <a href="S__36348226_0.jpg"><img src="S__36348226_0.jpg"></a>
-      <a href="S__36348227_0.jpg"><img src="S__36348227_0.jpg"></a>
-      <a href="S__36348228_0.jpg"><img src="S__36348228_0.jpg"></a>
-      <a href="S__36348229_0.jpg"><img src="S__36348229_0.jpg"></a>
-      <a href="S__36348230_0.jpg"><img src="S__36348230_0.jpg"></a>
-      <a href="S__36348231_0.jpg"><img src="S__36348231_0.jpg"></a>
-      <a href="S__36348232_0.jpg"><img src="S__36348232_0.jpg"></a>
-      <a href="S__36348234_0.jpg"><img src="S__36348234_0.jpg"></a>
-      <a href="S__36348235_0.jpg"><img src="S__36348235_0.jpg"></a>
-      <a href="S__36348236_0.jpg"><img src="S__36348236_0.jpg"></a>
-      <a href="S__36348237_0.jpg"><img src="S__36348237_0.jpg"></a>
-      <a href="S__36348238_0.jpg"><img src="S__36348238_0.jpg"></a>
+    <div class="section">
+      <h2>英格麗老師介紹</h2>
+      <p>英格莉老師｜資深身心靈講師・神秘學教育推廣者<br>
+      英格莉老師為資深身心靈工作者，長年致力於塔羅與神秘學的教學與推廣。2019年創立「英格莉身心靈工作室」，推動新世紀的宇宙與地球和諧觀，協助更多人走上自我覺察與內在整合之路。教學風格活潑靈活、條理清晰，擅長將深奧的神秘學理論結合生活實踐，幫助學員提升內在力量。</p>
     </div>
-  </section>
 
-  <div class="quote-box">正在載入魔法語錄...</div>
+    <div class="section">
+      <h2>作品展示</h2>
+      <div class="image-carousel">
+        <img src="S__36348138_0.jpg">
+        <img src="S__36348139_0.jpg">
+        <img src="S__36348140_0.jpg">
+        <img src="S__36348141_0.jpg">
+        <img src="S__36348142_0.jpg">
+        <img src="S__36348143_0.jpg">
+        <img src="S__36348144_0.jpg">
+        <img src="S__36348145_0.jpg">
+        <img src="S__36348146_0.jpg">
+        <img src="S__36348147_0.jpg">
+        <img src="S__36348149_0.jpg">
+        <img src="S__36348150_0.jpg">
+        <img src="S__36348151_0.jpg">
+        <img src="S__36348152_0.jpg">
+        <img src="S__36348153_0.jpg">
+        <img src="S__36348174_0.jpg">
+        <img src="S__36348175_0.jpg">
+        <img src="S__36348176_0.jpg">
+        <img src="S__36348177_0.jpg">
+        <img src="S__36348178_0.jpg">
+        <img src="S__36348179_0.jpg">
+        <img src="S__36348180_0.jpg">
+        <img src="S__36348181_0.jpg">
+        <img src="S__36348182_0.jpg">
+        <img src="S__36348183_0.jpg">
+        <img src="S__36348185_0.jpg">
+        <img src="S__36348186_0.jpg">
+        <img src="S__36348223_0.jpg">
+        <img src="S__36348224_0.jpg">
+        <img src="S__36348225_0.jpg">
+        <img src="S__36348226_0.jpg">
+        <img src="S__36348227_0.jpg">
+        <img src="S__36348228_0.jpg">
+        <img src="S__36348229_0.jpg">
+        <img src="S__36348230_0.jpg">
+        <img src="S__36348231_0.jpg">
+        <img src="S__36348232_0.jpg">
+        <img src="S__36348234_0.jpg">
+        <img src="S__36348235_0.jpg">
+        <img src="S__36348236_0.jpg">
+        <img src="S__36348237_0.jpg">
+        <img src="S__36348238_0.jpg">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>魔法語錄</h2>
+      <div id="quote" class="quote-box">載入中...</div>
+    </div>
+
+    <div class="section">
+      <h2>社群連結</h2>
+      <div class="dropdown">
+        <select onchange="if(this.value) window.open(this.value, '_blank')">
+          <option value="">請選擇連結</option>
+          <option value="https://www.instagram.com/ingridmagick4283/?hl=ja">Instagram</option>
+          <option value="https://bit.ly/45mDgAs">Podcast (SoundOn)</option>
+          <option value="https://bit.ly/3RsPBNY">Podcast (Spotify)</option>
+          <option value="https://www.youtube.com/@Ingridstudio_2019">YouTube 頻道</option>
+          <option value="https://tw.shp.ee/cLbmVew">蝦皮賣場</option>
+        </select>
+      </div>
+      <a href="https://line.me/ti/p/VFSORxf" class="btn">LINE 報名諮詢</a>
+    </div>
+  </div>
+
+  <script>
+    const quotes = [
+      "你的光芒值得整個宇宙為你閃耀。",
+      "宇宙的安排永遠剛剛好。",
+      "你願意相信，奇蹟才會發生。",
+      "沉靜之中，蘊藏最大的力量。",
+      "就算迷路，也是在通往自己的路上。",
+      "每一次心碎，都是靈魂重組的契機。",
+      "你不需要完美，才能被愛。",
+      "愛自己，是靈性修行的第一步。",
+      "即使身陷黑暗，你依然是光的容器。",
+      "靈魂從不急躁，它相信時機。",
+      "你是一道連接天地的橋樑。",
+      "每一次深呼吸，都是療癒的開始。",
+      "順流而行，你將遇見宇宙的祝福。",
+      "接受自己的每個樣子，你就自由了。",
+      "你走過的所有路，都是為了遇見現在的你。",
+      "你並不孤單，宇宙一直與你同在。",
+      "保持純淨，是最強的守護。",
+      "善良不是軟弱，而是深層的勇敢。",
+      "你擁有轉化一切的能量。",
+      "靜心，是與高我連結的橋樑。",
+      "萬物都有靈性，你也是。",
+      "與其尋找答案，不如成為答案。",
+      "你的直覺就是來自靈魂的低語。",
+      "感謝，是最強的能量擴大器。",
+      "你值得所有你夢想的美好。",
+      "願你的心，如月光般溫柔照亮他人。",
+      "在沉默中，你會聽見靈魂的聲音。",
+      "每次跌倒都是靈魂在長高。",
+      "讓光穿透你，你就是祝福本身。",
+      "星星會為願望努力閃爍。",
+      "把悲傷交給月亮，讓它幫你安放。",
+      "心中有光，走到哪裡都能發亮。",
+      "愛是永恆的魔法。",
+      "每個呼吸，都是新的開始。",
+      "你就是你在等的奇蹟。",
+      "記得仰望星空，靈魂會得到答案。",
+      "願你擁抱每個版本的自己。",
+      "脆弱，是心打開的時候。",
+      "你值得平靜，也值得光芒。",
+      "放下不是放棄，是為了更大的接納。",
+      "你的存在，就是世界的禮物。",
+      "相信你內在的光，它從不熄滅。",
+      "與宇宙同步時，一切自然展開。",
+      "你的一笑，是這世界的彩虹。",
+      "別急，花也要時間綻放。",
+      "你的靈魂知道方向，只要你願聽。",
+      "感受，是連接神性的管道。",
+      "活著，是最神聖的奇蹟。",
+      "只要心念轉動，現實也會跟著改變。",
+      "你早已足夠。現在就可以閃耀。"
+    ];
+
+    let current = 0;
+    const quoteEl = document.getElementById("quote");
+
+    function showQuote() {
+      quoteEl.textContent = quotes[current];
+      current = (current + 1) % quotes.length;
+    }
+
+    showQuote();
+    setInterval(showQuote, 8000);
+  </script>
 </body>
 </html>
