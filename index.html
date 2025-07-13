@@ -16,52 +16,34 @@
       color: #333;
     }
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: white;
-      border-bottom: 1px solid #ccc;
-      z-index: 1000;
+      background: #6b2ca0;
+      color: white;
+      padding: 12px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
     }
-    .logo {
-      font-weight: bold;
-      color: #6b2ca0;
+    header h1 {
+      margin: 0;
       font-size: 20px;
     }
-    .hamburger {
-      font-size: 28px;
-      background: none;
-      border: none;
+    .menu-toggle {
+      font-size: 24px;
       cursor: pointer;
     }
     .mobile-menu {
       display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      background: white;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      z-index: 1000;
+      background-color: #f2eaff;
+      padding: 10px 20px;
     }
-    .mobile-menu a {
-      padding: 12px;
-      border-bottom: 1px solid #eee;
-      color: #6b2ca0;
+    .mobile-menu a, .mobile-menu select {
+      display: block;
+      margin-bottom: 10px;
       text-decoration: none;
-      text-align: left;
-    }
-    .mobile-menu a:last-child {
-      border-bottom: none;
+      color: #6b2ca0;
     }
     .container {
-      padding: 90px 20px 20px;
+      padding: 20px;
       max-width: 720px;
       margin: auto;
     }
@@ -72,19 +54,27 @@
       margin-bottom: 24px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
-    h1, h2 {
+    h2 {
       color: #6b2ca0;
       text-align: center;
     }
-    .image-carousel {
-      display: flex;
-      overflow-x: auto;
-      gap: 12px;
+    .carousel {
+      position: relative;
+      overflow: hidden;
     }
-    .image-carousel img {
+    .carousel-track {
+      display: flex;
+      animation: scrollCarousel 40s linear infinite;
+    }
+    .carousel-track img {
       height: 180px;
       width: auto;
+      margin-right: 12px;
       border-radius: 8px;
+    }
+    @keyframes scrollCarousel {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
     .quote-box {
       height: 60px;
@@ -116,29 +106,45 @@
 </head>
 <body>
   <header>
-    <div class="logo">英格麗魔法天地</div>
-    <button class="hamburger" onclick="toggleMenu()">☰</button>
-    <div id="mobileMenu" class="mobile-menu">
-      <a href="https://www.instagram.com/ingridmagick4283/?hl=ja" target="_blank">Instagram</a>
-      <a href="https://bit.ly/45mDgAs" target="_blank">Podcast (SoundOn)</a>
-      <a href="https://bit.ly/3RsPBNY" target="_blank">Podcast (Spotify)</a>
-      <a href="https://www.youtube.com/@Ingridstudio_2019" target="_blank">YouTube 頻道</a>
-      <a href="https://tw.shp.ee/cLbmVew" target="_blank">蝦皮賣場</a>
-      <a href="https://line.me/ti/p/VFSORxf" target="_blank">LINE 報名諮詢</a>
-    </div>
+    <h1>英格麗魔法天地</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   </header>
-
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="https://www.instagram.com/ingridmagick4283/?hl=ja">Instagram</a>
+    <a href="https://bit.ly/45mDgAs">Podcast (SoundOn)</a>
+    <a href="https://bit.ly/3RsPBNY">Podcast (Spotify)</a>
+    <a href="https://www.youtube.com/@Ingridstudio_2019">YouTube 頻道</a>
+    <a href="https://tw.shp.ee/cLbmVew">蝦皮賣場</a>
+    <a href="https://line.me/ti/p/VFSORxf" class="btn">LINE 報名諮詢</a>
+  </div>
   <div class="container">
     <div class="section">
       <h2>英格麗老師介紹</h2>
-      <p>英格莉老師｜資深身心靈講師・神秘學教育推廣者<br>
-      英格莉老師為資深身心靈工作者，長年致力於塔羅與神秘學的教學與推廣。2019年創立「英格莉身心靈工作室」，推動新世紀的宇宙與地球和諧觀，協助更多人走上自我覺察與內在整合之路。教學風格活潑靈活、條理清晰，擅長將深奧的神秘學理論結合生活實踐，幫助學員提升內在力量。</p>
+      <p>英格莉老師｜資深身心靈講師・神秘學教育推廣者。她擅長結合理論與生活實踐，創辦英格麗工作室，致力推廣靈性教育與療癒課程。</p>
+    </div>
+
+    <div class="section">
+      <h2>團隊老師介紹</h2>
+      <p><strong>雪莉老師</strong>｜能量奧剛手作師、弦線藝術講師，擅長療癒工作坊與占卜教學。</p>
+      <p><strong>波特老師</strong>｜塔羅占卜師與靜心線藝教學講師，專精占卜與心靈轉化引導。</p>
+      <p><strong>小芸（Fiona）老師</strong>｜靈性療癒者與神秘學教學助理，課程與簡介待補。</p>
+    </div>
+
+    <div class="section">
+      <h2>課程介紹</h2>
+      <ul>
+        <li>靜心曼陀羅磁鐵彩繪｜透過點畫釋放壓力，與自己和解。</li>
+        <li>奧剛能量飾品手作｜結合金屬與水晶能量創作守護物。</li>
+        <li>線藝靜心工作坊｜一線一釘靜心創作，連結內在力量。</li>
+        <li>身心靈能量練習課｜靈擺調頻、深度占卜與靈性成長引導。</li>
+      </ul>
     </div>
 
     <div class="section">
       <h2>作品展示</h2>
-      <div class="image-carousel">
-       <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg"></a>
+      <div class="carousel">
+        <div class="carousel-track">
+         <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg"></a>
       <a href="S__36348139_0.jpg"><img src="S__36348139_0.jpg"></a>
       <a href="S__36348140_0.jpg"><img src="S__36348140_0.jpg"></a>
       <a href="S__36348141_0.jpg"><img src="S__36348141_0.jpg"></a>
@@ -184,6 +190,8 @@
 
 
 
+          " + Array.from({length: 30}, (_, i) => `<img src="S__363481${38 + i}_0.jpg">`).join('') + "
+        </div>
       </div>
     </div>
 
@@ -196,11 +204,13 @@
   <script>
     function toggleMenu() {
       const menu = document.getElementById("mobileMenu");
-      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
     }
 
     const quotes = [
-      "你的光芒值得整個宇宙為你閃耀。",
+     
+
+"你的光芒值得整個宇宙為你閃耀。",
       "宇宙的安排永遠剛剛好。",
       "你願意相信，奇蹟才會發生。",
       "沉靜之中，蘊藏最大的力量。",
@@ -250,8 +260,8 @@
       "活著，是最神聖的奇蹟。",
       "只要心念轉動，現實也會跟著改變。",
       "你早已足夠。現在就可以閃耀。"
-    ];
 
+    ];
     let current = 0;
     const quoteEl = document.getElementById("quote");
     function showQuote() {
