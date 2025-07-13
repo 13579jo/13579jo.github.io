@@ -16,13 +16,6 @@
       font-family: 'Noto Serif TC', serif;
       color: #fff;
       display: flex;
-      flex-direction: row;
-    }
-
-    .main-content {
-      flex: 3;
-      padding: 10px;
-      display: flex;
       flex-direction: column;
       align-items: center;
     }
@@ -66,12 +59,13 @@
     .carousel-wrapper {
       overflow: hidden;
       width: 100%;
+      max-width: 100vw;
       margin-top: 10px;
     }
 
     .carousel {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       animation: scroll 60s linear infinite;
       width: max-content;
       margin: auto;
@@ -79,8 +73,9 @@
     }
 
     .carousel img {
-      width: 120px;
-      height: 90px;
+      width: 100px;
+      height: 80px;
+      max-width: 100%;
       border: 2px solid #fff;
       border-radius: 10px;
       box-shadow: 0 0 12px #fff;
@@ -96,23 +91,6 @@
     @keyframes scroll {
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
-    }
-
-    .quote-box {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 200px;
-      background: rgba(0, 0, 0, 0.6);
-      border: 2px solid #fff;
-      border-radius: 12px;
-      padding: 16px;
-      font-size: 1em;
-      color: #cc99ff;
-      box-shadow: none;
-      text-align: center;
-      letter-spacing: 2px;
-      z-index: 999;
     }
 
     .teacher-box {
@@ -138,39 +116,47 @@
       border: 2px solid #fff;
     }
 
-    .sidebar {
-      flex: 1;
-      padding: 20px;
+    .quote-box {
+      margin-top: 30px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid #fff;
+      border-radius: 12px;
+      padding: 16px;
       font-size: 1em;
-      line-height: 2em;
-      color: #fff;
+      color: #cc99ff;
+      text-align: center;
+      letter-spacing: 2px;
+      max-width: 300px;
     }
 
-    .sidebar a {
-      color: #cc99ff;
-      text-decoration: none;
+    @media screen and (max-width: 768px) {
+      .carousel img {
+        width: 80px;
+        height: 60px;
+      }
+      .teacher-box {
+        width: 90%;
+      }
+      .quote-box {
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="sidebar">
-    
+  <h1>英格麗魔法天地</h1>
+
+  <div class="button-group">
+    <a class="magic-button" href="https://www.instagram.com/ingridmagick4283/?hl=ja" target="_blank">📷 IG 日常</a>
+    <a class="magic-button" href="https://bit.ly/45mDgAs" target="_blank">🎧 Podcast SoundOn</a>
+    <a class="magic-button" href="https://bit.ly/3RsPBNY" target="_blank">🎧 Podcast Spotify</a>
+    <a class="magic-button" href="https://www.youtube.com/@Ingridstudio_2019" target="_blank">📺 YouTube 頻道</a>
+    <a class="magic-button" href="https://tw.shp.ee/cLbmVew" target="_blank">🔮 蝦皮賣場</a>
   </div>
 
-  <div class="main-content">
-    <h1>英格麗魔法天地</h1>
-
-    <div class="button-group">
-      <a class="magic-button" href="https://www.instagram.com/ingridmagick4283/?hl=ja" target="_blank">📷 IG 日常</a>
-      <a class="magic-button" href="https://bit.ly/45mDgAs" target="_blank">🎧 Podcast SoundOn</a>
-      <a class="magic-button" href="https://bit.ly/3RsPBNY" target="_blank">🎧 Podcast Spotify</a>
-      <a class="magic-button" href="https://www.youtube.com/@Ingridstudio_2019" target="_blank">📺 YouTube 頻道</a>
-      <a class="magic-button" href="https://tw.shp.ee/cLbmVew" target="_blank">🔮 蝦皮賣場</a>
-    </div>
-
-    <div class="carousel-wrapper">
-      <div class="carousel">
-            <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg"></a>
+  <div class="carousel-wrapper">
+    <div class="carousel">
+     <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg"></a>
       <a href="S__36348139_0.jpg"><img src="S__36348139_0.jpg"></a>
       <a href="S__36348140_0.jpg"><img src="S__36348140_0.jpg"></a>
       <a href="S__36348141_0.jpg"><img src="S__36348141_0.jpg"></a>
@@ -198,60 +184,18 @@
       <a href="S__36348185_0.jpg"><img src="S__36348185_0.jpg"></a>
       <a href="S__36348186_0.jpg"><img src="S__36348186_0.jpg"></a>
       <a href="S__36348223_0.jpg"><img src="S__36348223_0.jpg"></a>
-      <a href="S__36348224_0.jpg"><img src="S__36348224_0.jpg"></a>
-      <a href="S__36348225_0.jpg"><img src="S__36348225_0.jpg"></a>
-      <a href="S__36348226_0.jpg"><img src="S__36348226_0.jpg"></a>
-      <a href="S__36348227_0.jpg"><img src="S__36348227_0.jpg"></a>
-      <a href="S__36348228_0.jpg"><img src="S__36348228_0.jpg"></a>
-      <a href="S__36348229_0.jpg"><img src="S__36348229_0.jpg"></a>
-      <a href="S__36348230_0.jpg"><img src="S__36348230_0.jpg"></a>
-      <a href="S__36348231_0.jpg"><img src="S__36348231_0.jpg"></a>
-      <a href="S__36348232_0.jpg"><img src="S__36348232_0.jpg"></a>
-      <a href="S__36348234_0.jpg"><img src="S__36348234_0.jpg"></a>
-      <a href="S__36348235_0.jpg"><img src="S__36348235_0.jpg"></a>
-      <a href="S__36348236_0.jpg"><img src="S__36348236_0.jpg"></a>
-      <a href="S__36348237_0.jpg"><img src="S__36348237_0.jpg"></a>
-      <a href="S__36348238_0.jpg"><img src="S__36348238_0.jpg"></a>
-    
-      </div>
     </div>
+  </div>
 
-    <div class="teacher-box">
-      <h3>老師團隊</h3>
-      <img src="S__36348134_0.jpg" alt="老師圖">
-    </div>
+  <div class="teacher-box">
+    <h3>老師團隊</h3>
+    <img src="S__36348134_0.jpg" alt="老師圖">
   </div>
 
   <div class="quote-box" id="quoteBox"></div>
 
   <script>
     const quotes = [
-     
-"你的光芒值得整個宇宙為你閃耀。",
-      "宇宙的安排永遠剛剛好。",
-      "你願意相信，奇蹟才會發生。",
-      "沉靜之中，蘊藏最大的力量。",
-      "就算迷路，也是在通往自己的路上。",
-      "每一次心碎，都是靈魂重組的契機。",
-      "你不需要完美，才能被愛。",
-      "愛自己，是靈性修行的第一步。",
-      "即使身陷黑暗，你依然是光的容器。",
-      "靈魂從不急躁，它相信時機。",
-      "你是一道連接天地的橋樑。",
-      "每一次深呼吸，都是療癒的開始。",
-      "順流而行，你將遇見宇宙的祝福。",
-      "接受自己的每個樣子，你就自由了。",
-      "你走過的所有路，都是為了遇見現在的你。",
-      "你並不孤單，宇宙一直與你同在。",
-      "保持純淨，是最強的守護。",
-      "善良不是軟弱，而是深層的勇敢。",
-      "你擁有轉化一切的能量。",
-      "靜心，是與高我連結的橋樑。",
-      "萬物都有靈性，你也是。",
-      "與其尋找答案，不如成為答案。",
-      "你的直覺就是來自靈魂的低語。",
-      "感謝，是最強的能量擴大器。",
-      "你值得所有你夢想的美好。",
       "願你的心，如月光般溫柔照亮他人。",
       "在沉默中，你會聽見靈魂的聲音。",
       "每次跌倒都是靈魂在長高。",
@@ -277,10 +221,10 @@
       "活著，是最神聖的奇蹟。",
       "只要心念轉動，現實也會跟著改變。",
       "你早已足夠。現在就可以閃耀。"
-
     ];
     const quoteBox = document.getElementById("quoteBox");
     quoteBox.textContent = quotes[Math.floor(Math.random() * quotes.length)];
   </script>
 </body>
 </html>
+
