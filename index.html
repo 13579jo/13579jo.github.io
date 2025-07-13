@@ -1,223 +1,218 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>英格麗魔法天地</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-image: url('958628.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
       font-family: 'Noto Serif TC', serif;
+      background: url('958628.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
     }
 
-    h1.title {
-      font-size: 42px;
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    header h1 {
+      font-size: 48px;
       color: #a96ed7;
       text-shadow: 2px 2px 5px white;
-      letter-spacing: 6px;
-      text-align: center;
-      margin: 30px 10px 20px;
-      line-height: 1.4;
+      letter-spacing: 8px;
     }
 
-    .button-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      margin: 10px 20px 30px;
-    }
-
-    .magic-button {
-      padding: 14px 28px;
-      background: linear-gradient(145deg, #b48ddb, #f5e9ff);
-      border: 2px solid white;
-      border-radius: 30px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #4b0082;
-      box-shadow: 0 0 10px #fff;
-      text-decoration: none;
-      transition: transform 0.2s;
-      width: 90%;
-      text-align: center;
-    }
-
-    .magic-button:hover {
-      transform: scale(1.04);
-    }
-
-    .carousel {
-      overflow: hidden;
-      white-space: nowrap;
-      padding: 20px 0;
-    }
-
-    .carousel img {
-      width: 70%;
-      height: auto;
-      margin: 0 10px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(255,255,255,0.6);
-      display: inline-block;
-      animation: scroll 25s linear infinite;
-    }
-
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-
-    .teacher-section {
-      text-align: center;
-      padding: 40px 20px 20px;
-    }
-
-    .teacher-title {
-      font-size: 28px;
-      color: #a96ed7;
-      text-shadow: 2px 2px 5px white;
-      letter-spacing: 5px;
-      margin-bottom: 20px;
-    }
-
-    .teacher-photo {
-      width: 90%;
-      max-width: 300px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.7);
-    }
-
-    .quote {
-      margin: 40px 20px 50px;
+    header p {
       font-size: 20px;
+      margin-top: 10px;
+      color: #ffffffcc;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      color: #a96ed7;
+      text-shadow: 2px 2px 4px white;
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .teacher-card, .course-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.4);
+    }
+
+    .teacher-card img, .course-card img {
+      width: 100%;
+      max-width: 300px;
+      display: block;
+      margin: 0 auto 20px;
+      border-radius: 12px;
+    }
+
+    .teacher-card h3, .course-card h3 {
+      color: #ffccff;
+      margin-bottom: 10px;
+    }
+
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      scroll-snap-type: x mandatory;
+      padding: 10px;
+    }
+
+    .slider img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.6);
+      scroll-snap-align: center;
+      flex-shrink: 0;
+    }
+
+    .quote-box {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      font-size: 18px;
       color: #a96ed7;
       text-shadow: 1px 1px 3px white;
-      letter-spacing: 4px;
-      line-height: 1.8;
-      text-align: center;
+      margin: 40px auto;
+      width: 90%;
+      max-width: 600px;
     }
 
-    @media (min-width: 768px) {
-      h1.title {
-        font-size: 48px;
-      }
+    .links {
+      text-align: center;
+      margin-bottom: 60px;
+    }
 
-      .button-group {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+    .links a {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 24px;
+      background: #fff;
+      color: #4b0082;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 8px rgba(255,255,255,0.6);
+    }
 
-      .magic-button {
-        width: auto;
-        margin: 0 10px;
-      }
-
-      .carousel img {
-        width: 220px;
-      }
-
-      .teacher-title {
-        font-size: 36px;
-      }
-
-      .quote {
-        font-size: 22px;
-      }
+    .signup-button {
+      display: block;
+      margin: 20px auto 0;
+      padding: 14px 32px;
+      font-size: 18px;
+      background: #ffccff;
+      color: #4b0082;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(255,255,255,0.6);
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>英格麗魔法天地</h1>
+    <p>用靈性與知識連結宇宙的你</p>
+  </header>
 
-  <!-- 主標題 -->
-  <h1 class="title">英格麗魔法天地</h1>
+  <!-- 其他內容略 -->
 
-  <!-- 魔法按鈕區 -->
-  <div class="button-group">
-    <a href="https://www.instagram.com/ingridmagick4283" class="magic-button" target="_blank">IG 日常</a>
-    <a href="https://bit.ly/45mDgAs" class="magic-button" target="_blank">Podcast SoundOn</a>
-    <a href="https://bit.ly/3RsPBNY" class="magic-button" target="_blank">Podcast Spotify</a>
-    <a href="https://www.youtube.com/@Ingridstudio_2019" class="magic-button" target="_blank">YouTube 頻道</a>
-    <a href="https://tw.shp.ee/cLbmVew" class="magic-button" target="_blank">蝦皮賣場</a>
-  </div>
+  <section class="section">
+    <h2>魔法語錄</h2>
+    <div class="quote-box" id="magicQuote">✨ 請相信，每一個當下你都在發光 ✨</div>
+  </section>
 
-  <!-- 輪播圖片 -->
-  <div class="carousel">
-         <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg"></a>
-      <a href="S__36348139_0.jpg"><img src="S__36348139_0.jpg"></a>
-      <a href="S__36348140_0.jpg"><img src="S__36348140_0.jpg"></a>
-      <a href="S__36348141_0.jpg"><img src="S__36348141_0.jpg"></a>
-      <a href="S__36348142_0.jpg"><img src="S__36348142_0.jpg"></a>
-      <a href="S__36348143_0.jpg"><img src="S__36348143_0.jpg"></a>
-      <a href="S__36348144_0.jpg"><img src="S__36348144_0.jpg"></a>
-      <a href="S__36348145_0.jpg"><img src="S__36348145_0.jpg"></a>
-      <a href="S__36348146_0.jpg"><img src="S__36348146_0.jpg"></a>
-      <a href="S__36348147_0.jpg"><img src="S__36348147_0.jpg"></a>
-      <a href="S__36348149_0.jpg"><img src="S__36348149_0.jpg"></a>
-      <a href="S__36348150_0.jpg"><img src="S__36348150_0.jpg"></a>
-      <a href="S__36348151_0.jpg"><img src="S__36348151_0.jpg"></a>
-      <a href="S__36348152_0.jpg"><img src="S__36348152_0.jpg"></a>
-      <a href="S__36348153_0.jpg"><img src="S__36348153_0.jpg"></a>
-      <a href="S__36348174_0.jpg"><img src="S__36348174_0.jpg"></a>
-      <a href="S__36348175_0.jpg"><img src="S__36348175_0.jpg"></a>
-      <a href="S__36348176_0.jpg"><img src="S__36348176_0.jpg"></a>
-      <a href="S__36348177_0.jpg"><img src="S__36348177_0.jpg"></a>
-      <a href="S__36348178_0.jpg"><img src="S__36348178_0.jpg"></a>
-      <a href="S__36348179_0.jpg"><img src="S__36348179_0.jpg"></a>
-      <a href="S__36348180_0.jpg"><img src="S__36348180_0.jpg"></a>
-      <a href="S__36348181_0.jpg"><img src="S__36348181_0.jpg"></a>
-      <a href="S__36348182_0.jpg"><img src="S__36348182_0.jpg"></a>
-      <a href="S__36348183_0.jpg"><img src="S__36348183_0.jpg"></a>
-      <a href="S__36348185_0.jpg"><img src="S__36348185_0.jpg"></a>
-      <a href="S__36348186_0.jpg"><img src="S__36348186_0.jpg"></a>
-      <a href="S__36348223_0.jpg"><img src="S__36348223_0.jpg"></a>
-      <a href="S__36348224_0.jpg"><img src="S__36348224_0.jpg"></a>
-      <a href="S__36348225_0.jpg"><img src="S__36348225_0.jpg"></a>
-      <a href="S__36348226_0.jpg"><img src="S__36348226_0.jpg"></a>
-      <a href="S__36348227_0.jpg"><img src="S__36348227_0.jpg"></a>
-      <a href="S__36348228_0.jpg"><img src="S__36348228_0.jpg"></a>
-      <a href="S__36348229_0.jpg"><img src="S__36348229_0.jpg"></a>
-      <a href="S__36348230_0.jpg"><img src="S__36348230_0.jpg"></a>
-      <a href="S__36348231_0.jpg"><img src="S__36348231_0.jpg"></a>
-      <a href="S__36348232_0.jpg"><img src="S__36348232_0.jpg"></a>
-      <a href="S__36348234_0.jpg"><img src="S__36348234_0.jpg"></a>
-      <a href="S__36348235_0.jpg"><img src="S__36348235_0.jpg"></a>
-      <a href="S__36348236_0.jpg"><img src="S__36348236_0.jpg"></a>
-      <a href="S__36348237_0.jpg"><img src="S__36348237_0.jpg"></a>
-      <a href="S__36348238_0.jpg"><img src="S__36348238_0.jpg"></a>
-    
-  </div>
-
-  <!-- 老師介紹 -->
-  <div class="teacher-section">
-    <h2 class="teacher-title">老師團隊</h2>
-    <img src="S__36348134_0.jpg" class="teacher-photo" alt="老師照片">
-  </div>
-
-  <!-- 魔法語錄 -->
-  <div class="quote" id="magicQuote">
-    ✨「你內在的光，將帶領你走出所有黑暗。」✨
-  </div>
+  <section class="links">
+    <a href="https://www.instagram.com/ingridmagick4283" target="_blank">IG 日常</a>
+    <a href="https://bit.ly/45mDgAs" target="_blank">Podcast SoundOn</a>
+    <a href="https://bit.ly/3RsPBNY" target="_blank">Podcast Spotify</a>
+    <a href="https://www.youtube.com/@Ingridstudio_2019" target="_blank">YouTube 頻道</a>
+    <a href="https://tw.shp.ee/cLbmVew" target="_blank">蝦皮賣場</a>
+    <a href="https://lin.ee/VFSORxf" target="_blank">LINE 預約</a>
+  </section>
 
   <script>
     const quotes = [
-      "✨「你內在的光，將帶領你走出所有黑暗。」✨",
-      "🌙「相信宇宙，相信直覺，一切正在為你鋪路。」🌙",
-      "💫「你值得被愛，也值得夢想發光。」💫",
-      "🌟「真正的魔法，是你不放棄希望的那顆心。」🌟",
-      "🪐「魔法不是奇蹟，是你每天的努力與信念。」🪐"
+      "你的光芒值得整個宇宙為你閃耀。",
+      "宇宙的安排永遠剛剛好。",
+      "你願意相信，奇蹟才會發生。",
+      "沉靜之中，蘊藏最大的力量。",
+      "就算迷路，也是在通往自己的路上。",
+      "每一次心碎，都是靈魂重組的契機。",
+      "你不需要完美，才能被愛。",
+      "愛自己，是靈性修行的第一步。",
+      "即使身陷黑暗，你依然是光的容器。",
+      "靈魂從不急躁，它相信時機。",
+      "你是一道連接天地的橋樑。",
+      "每一次深呼吸，都是療癒的開始。",
+      "順流而行，你將遇見宇宙的祝福。",
+      "接受自己的每個樣子，你就自由了。",
+      "你走過的所有路，都是為了遇見現在的你。",
+      "你並不孤單，宇宙一直與你同在。",
+      "保持純淨，是最強的守護。",
+      "善良不是軟弱，而是深層的勇敢。",
+      "你擁有轉化一切的能量。",
+      "靜心，是與高我連結的橋樑。",
+      "萬物都有靈性，你也是。",
+      "與其尋找答案，不如成為答案。",
+      "你的直覺就是來自靈魂的低語。",
+      "感謝，是最強的能量擴大器。",
+      "你值得所有你夢想的美好。",
+      "願你的心，如月光般溫柔照亮他人。",
+      "在沉默中，你會聽見靈魂的聲音。",
+      "每次跌倒都是靈魂在長高。",
+      "讓光穿透你，你就是祝福本身。",
+      "星星會為願望努力閃爍。",
+      "把悲傷交給月亮，讓它幫你安放。",
+      "心中有光，走到哪裡都能發亮。",
+      "愛是永恆的魔法。",
+      "每個呼吸，都是新的開始。",
+      "你就是你在等的奇蹟。",
+      "記得仰望星空，靈魂會得到答案。",
+      "願你擁抱每個版本的自己。",
+      "脆弱，是心打開的時候。",
+      "你值得平靜，也值得光芒。",
+      "放下不是放棄，是為了更大的接納。",
+      "你的存在，就是世界的禮物。",
+      "相信你內在的光，它從不熄滅。",
+      "與宇宙同步時，一切自然展開。",
+      "你的一笑，是這世界的彩虹。",
+      "別急，花也要時間綻放。",
+      "你的靈魂知道方向，只要你願聽。",
+      "感受，是連接神性的管道。",
+      "活著，是最神聖的奇蹟。",
+      "只要心念轉動，現實也會跟著改變。",
+      "你早已足夠。現在就可以閃耀。"
     ];
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    document.getElementById('magicQuote').innerText = quotes[randomIndex];
-  </script>
 
+    let index = 0;
+    const quoteBox = document.getElementById("magicQuote");
+    setInterval(() => {
+      quoteBox.textContent = quotes[index];
+      index = (index + 1) % quotes.length;
+    }, 6000);
+  </script>
 </body>
 </html>
