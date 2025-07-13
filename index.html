@@ -29,7 +29,7 @@
       font-size: 2.8em;
       margin: 20px;
       color: #cc99ff;
-      text-shadow: 2px 2px 4px #000;
+      text-shadow: 2px 2px 4px #fff;
       letter-spacing: 3px;
     }
 
@@ -42,7 +42,8 @@
     .carousel {
       display: flex;
       gap: 12px;
-      animation: scroll 120s linear infinite;
+      animation: scroll linear infinite;
+      animation-duration: 0s;
       width: max-content;
       margin: auto;
       padding: 10px;
@@ -80,7 +81,7 @@
 
     .quote-box {
       position: fixed;
-      bottom: 20px;
+      top: 20px;
       right: 20px;
       width: 200px;
       background: rgba(0, 0, 0, 0.6);
@@ -93,6 +94,32 @@
       text-align: center;
       letter-spacing: 2px;
       z-index: 999;
+    }
+
+    .teacher-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 200px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid #fff;
+      border-radius: 12px;
+      padding: 10px;
+      text-align: center;
+      z-index: 998;
+    }
+
+    .teacher-box h3 {
+      color: #cc99ff;
+      text-shadow: 1px 1px 2px #fff;
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+    }
+
+    .teacher-box img {
+      width: 100%;
+      border-radius: 8px;
+      border: 2px solid #fff;
     }
 
     .sidebar {
@@ -135,7 +162,7 @@
 
     <div class="carousel-wrapper">
       <div class="carousel">
-         <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg"></a>
+             <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg"></a>
       <a href="S__36348139_0.jpg"><img src="S__36348139_0.jpg"></a>
       <a href="S__36348140_0.jpg"><img src="S__36348140_0.jpg"></a>
       <a href="S__36348141_0.jpg"><img src="S__36348141_0.jpg"></a>
@@ -177,20 +204,23 @@
       <a href="S__36348236_0.jpg"><img src="S__36348236_0.jpg"></a>
       <a href="S__36348237_0.jpg"><img src="S__36348237_0.jpg"></a>
       <a href="S__36348238_0.jpg"><img src="S__36348238_0.jpg"></a>
-        
-
+    
       </div>
     </div>
 
-    <!-- 嵌入塔羅主頁（縮小尺寸） -->
     <iframe src="https://13579jo.github.io/tarot-website1/"></iframe>
   </div>
 
   <div class="quote-box" id="quoteBox">載入魔法語錄中...</div>
 
+  <div class="teacher-box">
+    <h3>老師團隊</h3>
+    <img src="S__36348134_0.jpg" alt="老師圖">
+  </div>
+
   <script>
     const quotes = [
-     
+      
 "你的光芒值得整個宇宙為你閃耀。",
       "宇宙的安排永遠剛剛好。",
       "你願意相信，奇蹟才會發生。",
@@ -248,4 +278,3 @@
   </script>
 </body>
 </html>
-
