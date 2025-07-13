@@ -129,6 +129,46 @@
       text-decoration: none;
       box-shadow: 0 0 10px rgba(255,255,255,0.6);
     }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 32px;
+        letter-spacing: 4px;
+      }
+
+      header p {
+        font-size: 16px;
+        margin-top: 8px;
+      }
+
+      .section h2 {
+        font-size: 22px;
+      }
+
+      .teacher-card h3, .course-card h3 {
+        font-size: 18px;
+      }
+
+      .quote-box {
+        font-size: 16px;
+        line-height: 1.8;
+        padding: 18px;
+      }
+
+      .signup-button {
+        font-size: 16px;
+        padding: 12px 24px;
+      }
+
+      .links a {
+        font-size: 14px;
+        padding: 10px 18px;
+      }
+
+      .slider img {
+        width: 80vw;
+      }
+    }
   </style>
 </head>
 <body>
@@ -138,6 +178,16 @@
   </header>
 
   <!-- 其他內容略 -->
+
+  <section class="section">
+    <h2>作品展示</h2>
+    <div class="slider">
+      <!-- 自動顯示 30 張圖片 -->
+      <script>
+        document.write([...Array(30).keys()].map(i => `<img src="work${i+1}.jpg" alt="作品${i+1}">`).join(""));
+      </script>
+    </div>
+  </section>
 
   <section class="section">
     <h2>魔法語錄</h2>
