@@ -17,43 +17,43 @@
       color: #fff;
     }
 
-    /* 主標題 */
     h1.title {
-      font-size: 48px;
+      font-size: 42px;
       color: #a96ed7;
       text-shadow: 2px 2px 5px white;
-      letter-spacing: 10px;
+      letter-spacing: 6px;
       text-align: center;
-      margin-top: 40px;
-      margin-bottom: 20px;
+      margin: 30px 10px 20px;
+      line-height: 1.4;
     }
 
-    /* 按鈕區 */
     .button-group {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 30px;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin: 10px 20px 30px;
     }
 
     .magic-button {
-      padding: 12px 24px;
+      padding: 14px 28px;
       background: linear-gradient(145deg, #b48ddb, #f5e9ff);
       border: 2px solid white;
       border-radius: 30px;
       font-size: 18px;
+      font-weight: bold;
       color: #4b0082;
       box-shadow: 0 0 10px #fff;
       text-decoration: none;
       transition: transform 0.2s;
+      width: 90%;
+      text-align: center;
     }
 
     .magic-button:hover {
-      transform: scale(1.05);
+      transform: scale(1.04);
     }
 
-    /* 輪播區 */
     .carousel {
       overflow: hidden;
       white-space: nowrap;
@@ -61,12 +61,13 @@
     }
 
     .carousel img {
-      height: 200px;
+      width: 70%;
+      height: auto;
       margin: 0 10px;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255,255,255,0.5);
+      box-shadow: 0 0 12px rgba(255,255,255,0.6);
       display: inline-block;
-      animation: scroll 30s linear infinite;
+      animation: scroll 25s linear infinite;
     }
 
     @keyframes scroll {
@@ -74,61 +75,62 @@
       100% { transform: translateX(-100%); }
     }
 
-    /* 老師介紹 */
     .teacher-section {
       text-align: center;
-      padding: 50px 20px 30px;
+      padding: 40px 20px 20px;
     }
 
     .teacher-title {
-      font-size: 36px;
+      font-size: 28px;
       color: #a96ed7;
       text-shadow: 2px 2px 5px white;
-      letter-spacing: 8px;
+      letter-spacing: 5px;
       margin-bottom: 20px;
     }
 
     .teacher-photo {
-      width: 300px;
-      max-width: 90%;
+      width: 90%;
+      max-width: 300px;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(255,255,255,0.7);
     }
 
-    /* 魔法語錄 */
     .quote {
-      margin: 60px 20px 40px;
-      font-size: 22px;
+      margin: 40px 20px 50px;
+      font-size: 20px;
       color: #a96ed7;
-      text-shadow: 2px 2px 4px white;
-      letter-spacing: 5px;
-      line-height: 1.6;
+      text-shadow: 1px 1px 3px white;
+      letter-spacing: 4px;
+      line-height: 1.8;
       text-align: center;
     }
 
-    /* 響應式 */
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
       h1.title {
-        font-size: 32px;
-        letter-spacing: 6px;
+        font-size: 48px;
+      }
+
+      .button-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       .magic-button {
-        font-size: 16px;
-        padding: 10px 18px;
+        width: auto;
+        margin: 0 10px;
       }
 
       .carousel img {
-        height: 140px;
+        width: 220px;
       }
 
       .teacher-title {
-        font-size: 28px;
+        font-size: 36px;
       }
 
       .quote {
-        font-size: 18px;
-        letter-spacing: 3px;
+        font-size: 22px;
       }
     }
   </style>
@@ -149,7 +151,7 @@
 
   <!-- 輪播圖片 -->
   <div class="carousel">
-    <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg"></a>
+         <a href="S__36348138_0.jpg"><img src="S__36348138_0.jpg"></a>
       <a href="S__36348139_0.jpg"><img src="S__36348139_0.jpg"></a>
       <a href="S__36348140_0.jpg"><img src="S__36348140_0.jpg"></a>
       <a href="S__36348141_0.jpg"><img src="S__36348141_0.jpg"></a>
@@ -191,10 +193,7 @@
       <a href="S__36348236_0.jpg"><img src="S__36348236_0.jpg"></a>
       <a href="S__36348237_0.jpg"><img src="S__36348237_0.jpg"></a>
       <a href="S__36348238_0.jpg"><img src="S__36348238_0.jpg"></a>
-        
-
-
-
+    
   </div>
 
   <!-- 老師介紹 -->
@@ -205,11 +204,10 @@
 
   <!-- 魔法語錄 -->
   <div class="quote" id="magicQuote">
-    ✨「魔法正在你心中悄悄發芽。」✨
+    ✨「你內在的光，將帶領你走出所有黑暗。」✨
   </div>
 
   <script>
-    // 魔法語錄：隨機顯示一句
     const quotes = [
       "✨「你內在的光，將帶領你走出所有黑暗。」✨",
       "🌙「相信宇宙，相信直覺，一切正在為你鋪路。」🌙",
